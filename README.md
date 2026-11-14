@@ -92,7 +92,7 @@ Then visit `http://localhost:8080/` or open the live deployment at **[https://as
 
 | Member | Handle | Role & Affiliation |
 | --- | --- | --- |
-| **Dağhan Dağlı** | `@Lexovian` | Team Owner — AI & Systems Architecture (`Lexovian/WerrSoma`) |
+| **Dağhan Dağlı** | `@Lexovian` | Team Owner — High School Student Researcher, Toros Science High School, MEV (Toros University); AI & Systems Architecture (`Lexovian/WerrSoma`) |
 | **Dr. Zerrin Dağlı** | `@jesmaat` | Co-Investigator — Ph.D., Department of Computer Education and Instructional Technology (CEIT), Mersin University (`jesmaat/WerreduR`) |
 | **Volkan / `@pCwOrM`** | `@pCwOrM` | Collaborator — Cloud Infrastructure, Full-Stack Integration & Space Apps Ops |
 

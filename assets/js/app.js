@@ -196,6 +196,7 @@
       footerSlidesLink: '7-Slide HTML Deck (EN)',
       footerArchLink: 'Apache-2.0 Open Source',
       footerRefsLbl: 'Core References',
+      footerTeamLbl: 'Dağhan Dağlı (Toros Science High School, MEV (Toros University)) & Dr. Zerrin Dağlı (CEIT, Mersin Univ.)',
       footerContactLbl: 'Contact',
       svgLblImmune: 'IMMUNE & RADIATION SHIELD',
       svgLblNeuro: 'NEURO',
@@ -253,6 +254,7 @@
       footerSlidesLink: '7 Slaytlık HTML Sunumu (TR)',
       footerArchLink: 'Apache-2.0 Açık Kaynak',
       footerRefsLbl: 'Temel Referanslar',
+      footerTeamLbl: 'Dağhan Dağlı (Toros Fen Lisesi, MEV — Toros Üniv.) & Dr. Zerrin Dağlı (CEIT, Mersin Üniv.)',
       footerContactLbl: 'İletişim',
       svgLblImmune: 'BAĞIŞIKLIK VE RADYASYON KALKANI',
       svgLblNeuro: 'NÖRO',
@@ -412,6 +414,8 @@
     });
     const footerRefs = document.getElementById('footerRefsLbl');
     if (footerRefs) footerRefs.textContent = t.footerRefsLbl;
+    const footerTeam = document.getElementById('footerTeamLbl');
+    if (footerTeam) footerTeam.textContent = t.footerTeamLbl;
     const footerContact = document.getElementById('footerContactLbl');
     if (footerContact) footerContact.textContent = t.footerContactLbl;
 

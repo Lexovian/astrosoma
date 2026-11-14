@@ -105,7 +105,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
                 Uzay Görevlerinde Astronotlar İçin Sıfır-SRAM Bioneural ve Otonom Sağlık İzleme Yazılımı
               </p>
               <div class="card">
-                <p><b>Takım Lideri:</b> Dağhan Dağlı (<code>@Lexovian</code>) — Yapay Zeka ve Sistem Mimarisi (<i>Lexovian/WerrSoma</i>)</p>
+                <p><b>Takım Lideri:</b> Dağhan Dağlı (<code>@Lexovian</code>) — Lise Öğrencisi &amp; Araştırmacı, Toros Fen Lisesi (Toros Science High School), MEV (Toros Üniversitesi) · Yapay Zeka ve Sistem Mimarisi (<i>Lexovian/WerrSoma</i>)</p>
                 <p><b>Eş-Araştırmacı:</b> Dr. Zerrin Dağlı (<code>@jesmaat</code>) — Bilgisayar ve Öğretim Teknolojileri Eğitimi (CEIT) Doktora, Mersin Üniv. (<i>jesmaat/WerreduR</i>)</p>
                 <p style="margin-bottom:0;"><b>Açık Kaynak &amp; İletişim:</b> <a class="link" href="https://github.com/Lexovian/astrosoma"><code>github.com/Lexovian/astrosoma</code></a> (Apache-2.0) · <a class="link" href="mailto:info@astrosoma.space"><code>info@astrosoma.space</code></a></p>
               </div>
@@ -304,7 +304,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
                 Zero-SRAM Bioneural &amp; Homeostatic Health Monitoring Software for Astronauts on Space Missions
               </p>
               <div class="card">
-                <p><b>Team Owner:</b> Dağhan Dağlı (<code>@Lexovian</code>) — AI &amp; Systems Architecture (<i>Lexovian/WerrSoma</i>)</p>
+                <p><b>Team Owner:</b> Dağhan Dağlı (<code>@Lexovian</code>) — High School Student Researcher, Toros Science High School, MEV (Toros University) · AI &amp; Systems Architecture (<i>Lexovian/WerrSoma</i>)</p>
                 <p><b>Co-Investigator:</b> Dr. Zerrin Dağlı (<code>@jesmaat</code>) — Ph.D., Department of Computer Education &amp; Instructional Technology (CEIT), Mersin Univ. (<i>jesmaat/WerreduR</i>)</p>
                 <p style="margin-bottom:0;"><b>Open Source &amp; Contact:</b> <a class="link" href="https://github.com/Lexovian/astrosoma"><code>github.com/Lexovian/astrosoma</code></a> (Apache-2.0) · <a class="link" href="mailto:info@astrosoma.space"><code>info@astrosoma.space</code></a></p>
               </div>
