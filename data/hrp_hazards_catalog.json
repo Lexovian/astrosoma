@@ -1,0 +1,68 @@
+[
+  {
+    "id": "radiation",
+    "title_en": "Space Radiation",
+    "title_tr": "Uzay Radyasyonu",
+    "url": "https://www.nasa.gov/hrp/hazards/",
+    "health_impact_en": "Increases ionizing dose (GCR + SPE), cancer/degenerative risk, and immune stress.",
+    "health_impact_tr": "İyonlaştırıcı dozu (GCR + SPE), hücresel hasar ve bağışıklık baskılanması riskini artırır.",
+    "monitored_by": [
+      "dose_rate_msv_day",
+      "cumulative_dose_msv",
+      "noaa_goes_proton_pfu"
+    ]
+  },
+  {
+    "id": "isolation",
+    "title_en": "Isolation & Confinement",
+    "title_tr": "İzolasyon ve Kapalı Ortam",
+    "url": "https://www.nasa.gov/hrp/hazards/",
+    "health_impact_en": "Drives circadian disruption, sleep deficit, cognitive fatigue, and mood drift.",
+    "health_impact_tr": "Sirkadiyen ritim bozulması, uyku eksikliği, bilişsel yorgunluk ve ruh hali düşüşüne yol açar.",
+    "monitored_by": [
+      "sleep_hours",
+      "mood_score",
+      "hrv_sdnn_ms"
+    ]
+  },
+  {
+    "id": "distance",
+    "title_en": "Distance from Earth",
+    "title_tr": "Dünya'dan Uzaklık ve İletişim Gecikmesi",
+    "url": "https://www.nasa.gov/hrp/risks/",
+    "health_impact_en": "Cuts real-time Earth medical support (up to 22 min Mars one-way latency); demands autonomous triage.",
+    "health_impact_tr": "Yer hekimi canlı desteğini keser (Mars'ta 22 dk tek yön gecikme); otonom triyaj şarttır.",
+    "monitored_by": [
+      "werr_reserve_index",
+      "autonomous_triage_required"
+    ]
+  },
+  {
+    "id": "gravity",
+    "title_en": "Altered Gravity Fields",
+    "title_tr": "Değişen Yerçekimi Alanları",
+    "url": "https://www.nasa.gov/hrp/hazards/",
+    "health_impact_en": "Induces headward fluid shift (SANS), bone mineral loss, cardiac deconditioning, and orthostatic stress.",
+    "health_impact_tr": "Başa sıvı kayması (SANS), kemik mineral kaybı, kalp kondisyon düşüşü ve ortostatik stres yaratır.",
+    "monitored_by": [
+      "bp_systolic_mmhg",
+      "bp_diastolic_mmhg",
+      "heart_rate_bpm",
+      "core_temp_c"
+    ]
+  },
+  {
+    "id": "environment",
+    "title_en": "Hostile / Closed Environments",
+    "title_tr": "Zorlu ve Kapalı Yaşam Ortamı",
+    "url": "https://www.nasa.gov/hrp/ongoing-hrp-research/",
+    "health_impact_en": "Exposes crew to cabin CO2 accumulation, microbial shifts, noise, and regolith dust during EVAs.",
+    "health_impact_tr": "Kabin CO2 birikimi, mikrobiyal değişim ve EVA sonrası toz maruziyetine sebep olur.",
+    "monitored_by": [
+      "cabin_co2_mmhg",
+      "spo2_pct",
+      "blood_glucose_mgdl",
+      "core_temp_c"
+    ]
+  }
+]

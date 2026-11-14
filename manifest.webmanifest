@@ -1,0 +1,15 @@
+{
+  "name": "AstroSoma — Astronaut Health Monitoring Console",
+  "short_name": "AstroSoma",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070d19",
+  "theme_color": "#0b172a",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "schema_version": "astrosoma-verified-telemetry-v1",
+  "generated_utc": "2026-11-14T20:50:43.601881+00:00",
+  "space_weather": {
+    "source": "NOAA SWPC Live Feed",
+    "retrieved_utc": "2026-11-14T20:50:38.585082+00:00",
+    "satellite": 18,
+    "proton_time_tag": "2026-11-14T20:40:00Z",
+    "proton_series_tail": [
+      {
+        "time_tag": "2026-11-14T18:45:00Z",
+        "flux": 0.2163
+      },
+      {
+        "time_tag": "2026-11-14T18:50:00Z",
+        "flux": 0.2449
+      },
+      {
+        "time_tag": "2026-11-14T18:55:00Z",
+        "flux": 0.2542
+      },
+      {
+        "time_tag": "2026-11-14T19:00:00Z",
+        "flux": 0.2602
+      },
+      {
+        "time_tag": "2026-11-14T19:05:00Z",
+        "flux": 0.2103
+      },
+      {
+        "time_tag": "2026-11-14T19:10:00Z",
+        "flux": 0.252
+      },
+      {
+        "time_tag": "2026-11-14T19:15:00Z",
+        "flux": 0.2135
+      },
+      {
+        "time_tag": "2026-11-14T19:20:00Z",
+        "flux": 0.2391
+      },
+      {
+        "time_tag": "2026-11-14T19:25:00Z",
+        "flux": 0.2195
+      },
+      {
+        "time_tag": "2026-11-14T19:30:00Z",
+        "flux": 0.2736
+      },
+      {
+        "time_tag": "2026-11-14T19:35:00Z",
+        "flux": 0.2351
+      },
+      {
+        "time_tag": "2026-11-14T19:40:00Z",
+        "flux": 0.2511
+      },
+      {
+        "time_tag": "2026-11-14T19:45:00Z",
+        "flux": 0.2785
+      },
+      {
+        "time_tag": "2026-11-14T19:50:00Z",
+        "flux": 0.2919
+      },
+      {
+        "time_tag": "2026-11-14T19:55:00Z",
+        "flux": 0.2296
+      },
+      {
+        "time_tag": "2026-11-14T20:00:00Z",
+        "flux": 0.2242
+      },
+      {
+        "time_tag": "2026-11-14T20:05:00Z",
+        "flux": 0.2354
+      },
+      {
+        "time_tag": "2026-11-14T20:10:00Z",
+        "flux": 0.2254
+      },
+      {
+        "time_tag": "2026-11-14T20:15:00Z",
+        "flux": 0.2642
+      },
+      {
+        "time_tag": "2026-11-14T20:20:00Z",
+        "flux": 0.235
+      },
+      {
+        "time_tag": "2026-11-14T20:25:00Z",
+        "flux": 0.2615
+      },
+      {
+        "time_tag": "2026-11-14T20:30:00Z",
+        "flux": 0.2338
+      },
+      {
+        "time_tag": "2026-11-14T20:35:00Z",
+        "flux": 0.2267
+      },
+      {
+        "time_tag": "2026-11-14T20:40:00Z",
+        "flux": 0.207
+      }
+    ],
+    "kp_index": 1.0,
+    "kp_time_tag": "2026-11-14T15:00:00",
+    "pfu_10mev": 0.207,
+    "noaa_s_scale": "S0 (Quiet)",
+    "status": "optimal",
+    "estimated_leo_hab_msv_day": 0.567
+  },
+  "nasa_osdr_studies": [
+    {
+      "accession": "OSD-340",
+      "title": "Mlh1 deficiency increases the risk of hematopoietic malignancy after simulated space radiation exposure",
+      "organism": "Mus musculus",
+      "project_type": "Ground Study",
+      "factor": "Genotype     Ionizing Radiation     Absorbed Radiation Dose",
+      "query_domain": "radiation astronaut",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-340"
+    },
+    {
+      "accession": "OSD-334",
+      "title": "miRNA signature detection and countermeasures against HZE radiation exposure for tissue degeneration-Heart tissue",
+      "organism": "Mus musculus",
+      "project_type": "Ground Study",
+      "factor": "Hindlimb Unloading     Ionizing Radiation     Particle Charge",
+      "query_domain": "radiation astronaut",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-334"
+    },
+    {
+      "accession": "OSD-812",
+      "title": "Simulated microgravity impairs human NK cell cytotoxic activity against space radiation-relevant leukemic cells.",
+      "organism": "Homo sapiens",
+      "project_type": "Ground Study",
+      "factor": "Microgravity Simulation",
+      "query_domain": "radiation astronaut",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-812"
+    },
+    {
+      "accession": "OSD-52",
+      "title": "Expression data from SPHINX (SPaceflight of Huvec: an INtegrated eXperiment)",
+      "organism": "Homo sapiens",
+      "project_type": "Spaceflight Study",
+      "factor": "Spaceflight",
+      "query_domain": "spaceflight cardiovascular",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-52"
+    },
+    {
+      "accession": "OSD-481",
+      "title": "New insights into the role of lncRNA after spaceflight",
+      "organism": "Homo sapiens",
+      "project_type": "Spaceflight Study",
+      "factor": "Spaceflight     Time",
+      "query_domain": "spaceflight cardiovascular",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-481"
+    },
+    {
+      "accession": "OSD-599",
+      "title": "Transcriptomic Effects on the Mouse Heart Following 30 Days on the International Space Station",
+      "organism": "Mus musculus",
+      "project_type": "Spaceflight Study",
+      "factor": "Spaceflight",
+      "query_domain": "spaceflight cardiovascular",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-599"
+    },
+    {
+      "accession": "OSD-18",
+      "title": "Microarray Profile of Gene Expression during Osteoclast Differentiation in Modeled Microgravity",
+      "organism": "Mus musculus",
+      "project_type": "Ground Study",
+      "factor": "Microgravity Simulation",
+      "query_domain": "microgravity bone",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-18"
+    },
+    {
+      "accession": "OSD-133",
+      "title": "Acute transcriptional up-regulation specific to osteoblasts/osteoclasts in medaka fish immediately after exposure to microgravity",
+      "organism": "Oryzias latipes",
+      "project_type": "Spaceflight Study",
+      "factor": "Spaceflight     Time",
+      "query_domain": "microgravity bone",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-133"
+    },
+    {
+      "accession": "OSD-107",
+      "title": "The Role of PTHrP in Osteoblast Response to Microgravity: Implications for Osteoporosis Development.",
+      "organism": "Mus musculus",
+      "project_type": "Ground Study",
+      "factor": "Treatment     Genotype     Microgravity Simulation",
+      "query_domain": "microgravity bone",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-107"
+    },
+    {
+      "accession": "OSD-253",
+      "title": "Transcriptional analysis of kidneys from mice flown on the RR-7 mission",
+      "organism": "Mus musculus",
+      "project_type": "Spaceflight Study",
+      "factor": "Spaceflight     Strain     Duration     Treatment",
+      "query_domain": "spaceflight immune sleep",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-253"
+    }
+  ],
+  "hrp_hazards": [
+    {
+      "id": "radiation",
+      "title_en": "Space Radiation",
+      "title_tr": "Uzay Radyasyonu",
+      "url": "https://www.nasa.gov/hrp/hazards/",
+      "health_impact_en": "Increases ionizing dose (GCR + SPE), cancer/degenerative risk, and immune stress.",
+      "health_impact_tr": "İyonlaştırıcı dozu (GCR + SPE), hücresel hasar ve bağışıklık baskılanması riskini artırır.",
+      "monitored_by": [
+        "dose_rate_msv_day",
+        "cumulative_dose_msv",
+        "noaa_goes_proton_pfu"
+      ]
+    },
+    {
+      "id": "isolation",
+      "title_en": "Isolation & Confinement",
+      "title_tr": "İzolasyon ve Kapalı Ortam",
+      "url": "https://www.nasa.gov/hrp/hazards/",
+      "health_impact_en": "Drives circadian disruption, sleep deficit, cognitive fatigue, and mood drift.",
+      "health_impact_tr": "Sirkadiyen ritim bozulması, uyku eksikliği, bilişsel yorgunluk ve ruh hali düşüşüne yol açar.",
+      "monitored_by": [
+        "sleep_hours",
+        "mood_score",
+        "hrv_sdnn_ms"
+      ]
+    },
+    {
+      "id": "distance",
+      "title_en": "Distance from Earth",
+      "title_tr": "Dünya'dan Uzaklık ve İletişim Gecikmesi",
+      "url": "https://www.nasa.gov/hrp/risks/",
+      "health_impact_en": "Cuts real-time Earth medical support (up to 22 min Mars one-way latency); demands autonomous triage.",
+      "health_impact_tr": "Yer hekimi canlı desteğini keser (Mars'ta 22 dk tek yön gecikme); otonom triyaj şarttır.",
+      "monitored_by": [
+        "werr_reserve_index",
+        "autonomous_triage_required"
+      ]
+    },
+    {
+      "id": "gravity",
+      "title_en": "Altered Gravity Fields",
+      "title_tr": "Değişen Yerçekimi Alanları",
+      "url": "https://www.nasa.gov/hrp/hazards/",
+      "health_impact_en": "Induces headward fluid shift (SANS), bone mineral loss, cardiac deconditioning, and orthostatic stress.",
+      "health_impact_tr": "Başa sıvı kayması (SANS), kemik mineral kaybı, kalp kondisyon düşüşü ve ortostatik stres yaratır.",
+      "monitored_by": [
+        "bp_systolic_mmhg",
+        "bp_diastolic_mmhg",
+        "heart_rate_bpm",
+        "core_temp_c"
+      ]
+    },
+    {
+      "id": "environment",
+      "title_en": "Hostile / Closed Environments",
+      "title_tr": "Zorlu ve Kapalı Yaşam Ortamı",
+      "url": "https://www.nasa.gov/hrp/ongoing-hrp-research/",
+      "health_impact_en": "Exposes crew to cabin CO2 accumulation, microbial shifts, noise, and regolith dust during EVAs.",
+      "health_impact_tr": "Kabin CO2 birikimi, mikrobiyal değişim ve EVA sonrası toz maruziyetine sebep olur.",
+      "monitored_by": [
+        "cabin_co2_mmhg",
+        "spo2_pct",
+        "blood_glucose_mgdl",
+        "core_temp_c"
+      ]
+    }
+  ],
+  "official_resources": [
+    {
+      "agency": "NASA HRP",
+      "title": "5 Hazards of Human Spaceflight",
+      "url": "https://www.nasa.gov/hrp/hazards/"
+    },
+    {
+      "agency": "NASA HRP",
+      "title": "Risks of Human Spaceflight",
+      "url": "https://www.nasa.gov/hrp/risks/"
+    },
+    {
+      "agency": "NASA HRP",
+      "title": "Ongoing HRP Research in Space",
+      "url": "https://www.nasa.gov/hrp/ongoing-hrp-research/"
+    },
+    {
+      "agency": "CSA / ASC",
+      "title": "Monitoring Radiation for Astronaut Health",
+      "url": "https://www.asc-csa.gc.ca/eng/news/articles/2026/2026-02-26-monitoring-radiation-astronaut-health.asp"
+    },
+    {
+      "agency": "CSA / ASC",
+      "title": "Why Do We Conduct Science Experiments in Space?",
+      "url": "https://www.asc-csa.gc.ca/eng/iss/science/why-do-we-conduct-science-experiments-in-space.asp"
+    },
+    {
+      "agency": "NASA OSDR",
+      "title": "NASA Open Science Data Repository (GeneLab / ALSDA)",
+      "url": "https://osdr.nasa.gov/bio/repo/"
+    },
+    {
+      "agency": "NOAA SWPC",
+      "title": "GOES Solar Proton Flux & Planetary Kp Feeds",
+      "url": "https://www.swpc.noaa.gov/products/goes-proton-flux"
+    }
+  ]
+}

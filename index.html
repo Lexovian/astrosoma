@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroSoma — Autonomous Astronaut Health Monitoring Console</title>
+  <meta name="description" content="Open-source zero-SRAM astronaut health monitoring software for ISS, Orion, Lunar Base, Rover, and Mars missions. Built for NASA Space Apps Challenge 2026.">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Top Mission Command Bar -->
+    <header class="topbar">
+      <div class="brand">
+        <img src="/assets/astrosoma_mission_patch.jpg" alt="AstroSoma Mission Patch">
+        <div>
+          <h1>AstroSoma <span id="missionBadge" class="pill status-optimal">OPTIMAL</span></h1>
+          <div class="brand-sub" id="brandSub">0-SRAM Autonomous Astronaut Health &amp; Homeostasis Console</div>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <div class="control-group">
+          <label for="envSelect" id="lblEnv">Mission Environment</label>
+          <select id="envSelect">
+            <option value="station">ISS Space Station (0 g)</option>
+            <option value="spacecraft">Orion Spacecraft (Transit)</option>
+            <option value="rover">Pressurized Surface Rover</option>
+            <option value="lunar_base">Artemis Lunar Base (0.165 g)</option>
+            <option value="mars_transit">Mars Transit &amp; Habitat (22m delay)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="roleSelect" id="lblRole">Crew Role (CEIT Adaptive UX)</label>
+          <select id="roleSelect">
+            <option value="non_medical_pilot">Non-Medical Pilot / Specialist</option>
+            <option value="flight_engineer">EVA / Flight Engineer</option>
+            <option value="flight_surgeon_liaison">Crew Medical Officer / Liaison</option>
+          </select>
+        </div>
+
+        <span id="noaaHeaderChip" class="pill" title="NOAA GOES >=10 MeV Solar Proton Flux">NOAA SWPC: Loading...</span>
+        <button id="langToggle" type="button" class="btn-primary">TR / EN</button>
+        <a id="deckLink" href="/docs/AstroSoma_Presentation_EN.pdf" target="_blank" rel="noopener" class="pill">Pitch PDF</a>
+        <a href="https://github.com/Lexovian/astrosoma" target="_blank" rel="noopener" class="pill">GitHub</a>
+      </div>
+    </header>
+
+    <!-- Scenario & Multi-Modal Inputs Bar -->
+    <section class="scenario-bar" aria-label="Mission Scenarios and Multi-Modal Inputs">
+      <div class="scenario-buttons">
+        <span class="vital-range-hint" id="lblScenarios">Scenarios:</span>
+        <button type="button" class="scenario-btn active" data-scenario="nominal" id="scNominal">Nominal Orbit</button>
+        <button type="button" class="scenario-btn" data-scenario="solar_storm" id="scStorm">Solar Proton Storm (SPE)</button>
+        <button type="button" class="scenario-btn" data-scenario="rover_hypoxia_co2" id="scRover">Rover CO2 &amp; Hypoglycemia</button>
+        <button type="button" class="scenario-btn" data-scenario="mars_blackout" id="scMars">Mars 22-min Blackout</button>
+      </div>
+      <div class="tool-buttons">
+        <button type="button" id="btnCameraRppg" class="btn-primary">Optical rPPG Camera Scan</button>
+        <label class="pill" style="cursor:pointer;">
+          <span id="lblUploadLog">Upload JSON/CSV</span>
+          <input type="file" id="telemetryUpload" accept=".json,.csv" style="display:none;">
+        </label>
+        <button type="button" id="btnSeuTest" class="btn-warn">Simulate Cosmic-Ray SEU Bit-Flip</button>
+        <button type="button" id="btnExportJson">Export WERR-24</button>
+      </div>
+    </section>
+
+    <!-- Main Cockpit Grid -->
+    <main class="cockpit-grid">
+      <!-- Interactive Human Anatomy Panel -->
+      <section class="panel" aria-labelledby="anatomyHeading">
+        <div class="panel-header">
+          <h2 class="panel-title" id="anatomyHeading">Interactive Human Anatomy</h2>
+          <span class="pill" id="clickHintPill">Click body region</span>
+        </div>
+
+        <div class="anatomy-stage">
+          <svg id="anatomySvg" class="anatomy-svg" viewBox="0 0 260 440" role="img" aria-label="Interactive Astronaut Anatomy">
+            <defs>
+              <radialGradient id="auraGrad" cx="50%" cy="45%" r="52%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#060b16" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Whole-body Immune & Radiation Shield Halo (clickable) -->
+            <g class="body-hotspot" data-region="immune_rad" tabindex="0">
+              <ellipse cx="130" cy="215" rx="108" ry="198" fill="url(#auraGrad)" stroke="#38bdf8" stroke-dasharray="5 5" stroke-opacity="0.45" class="hotspot-ring"/>
+              <text x="130" y="427" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">IMMUNE &amp; RADIATION SHIELD</text>
+            </g>
+
+            <!-- Stylized Clinical Human Figure Silhouette -->
+            <path d="M130 28 C146 28 156 40 156 58 C156 76 146 88 130 88 C114 88 104 76 104 58 C104 40 114 28 130 28 Z
+                     M112 94 L148 94 L178 112 L196 196 L180 202 L166 135 L162 225 L176 382 L152 386 L134 252 L126 252 L108 386 L84 382 L98 225 L94 135 L80 202 L64 196 L82 112 Z"
+                  fill="#0f1f3d" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="2"/>
+
+            <!-- Region 1: Neuro / Brain -->
+            <g class="body-hotspot" data-region="neuro" tabindex="0">
+              <circle cx="130" cy="46" r="16" fill="#10b981" fill-opacity="0.32" stroke="#10b981" stroke-width="2" class="hotspot-ring hotspot-core"/>
+              <text x="130" y="49" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">NEURO</text>
+            </g>
+
+            <!-- Region 2: Ocular / SANS -->
+            <g class="body-hotspot" data-region="ocular" tabindex="0">
+              <rect x="112" y="59" width="36" height="14" rx="7" fill="#10b981" fill-opacity="0.35" stroke="#10b981" stroke-width="1.8" class="hotspot-ring hotspot-core"/>
+              <circle cx="122" cy="66" r="3" fill="#e0f2fe"/>
+              <circle cx="138" cy="66" r="3" fill="#e0f2fe"/>
+            </g>
+
+            <!-- Region 3: Respiratory / Lungs -->
+            <g class="body-hotspot" data-region="resp" tabindex="0">
+              <path d="M106 112 C98 122 98 152 108 158 L124 156 L124 112 Z M154 112 C162 122 162 152 152 158 L136 156 L136 112 Z"
+                    fill="#10b981" fill-opacity="0.28" stroke="#10b981" stroke-width="1.8" class="hotspot-ring hotspot-core"/>
+              <text x="86" y="138" text-anchor="end" fill="#cbd5e1" font-size="9">RESP</text>
+            </g>
+
+            <!-- Region 4: Cardiovascular / Heart -->
+            <g class="body-hotspot" data-region="cardio" tabindex="0">
+              <circle cx="136" cy="136" r="15" fill="#10b981" fill-opacity="0.45" stroke="#10b981" stroke-width="2.2" class="hotspot-ring hotspot-core"/>
+              <path d="M126 136 L131 136 L134 128 L138 143 L141 134 L146 136" fill="none" stroke="#fff" stroke-width="1.8"/>
+              <text x="176" y="138" text-anchor="start" fill="#cbd5e1" font-size="9">CARDIO</text>
+            </g>
+
+            <!-- Region 5: Metabolic / Glucose & Abdomen -->
+            <g class="body-hotspot" data-region="metab" tabindex="0">
+              <ellipse cx="130" cy="186" rx="22" ry="15" fill="#10b981" fill-opacity="0.32" stroke="#10b981" stroke-width="1.8" class="hotspot-ring hotspot-core"/>
+              <text x="130" y="189" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">METAB</text>
+            </g>
+
+            <!-- Region 6: Musculoskeletal / Bone & Thermo -->
+            <g class="body-hotspot" data-region="musculo" tabindex="0">
+              <rect x="100" y="255" width="16" height="92" rx="7" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="1.8" class="hotspot-ring hotspot-core"/>
+              <rect x="144" y="255" width="16" height="92" rx="7" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="1.8" class="hotspot-ring hotspot-core"/>
+              <text x="130" y="305" text-anchor="middle" fill="#cbd5e1" font-size="8.5" font-weight="700">BONE / °C</text>
+            </g>
+          </svg>
+
+          <div class="region-chips" id="regionChips"></div>
+          <div class="region-detail-box" id="regionDetailBox"></div>
+        </div>
+      </section>
+
+      <!-- Live Telemetry & Vital Inputs -->
+      <section class="panel" aria-labelledby="telemetryHeading">
+        <div class="panel-header">
+          <h2 class="panel-title" id="telemetryHeading">Physiological Indicators &amp; 0-SRAM Triage</h2>
+          <span class="pill" id="commsDelayPill">Delay: 0.25 s · Live Link</span>
+        </div>
+
+        <div class="summary-banner">
+          <div class="metric-highlight">
+            <div class="k" id="lblWerrReserve">0-SRAM Homeostatic Reserve</div>
+            <div class="v" id="valWerrReserve">92.4%</div>
+          </div>
+          <div class="metric-highlight">
+            <div class="k" id="lblWeightRam">Mutable Neural Weight RAM</div>
+            <div class="v" id="valWeightRam">0 Bytes (SEU-Free)</div>
+          </div>
+          <div class="metric-highlight">
+            <div class="k" id="lblPacketSize">Telemetry Packet Frame</div>
+            <div class="v" id="valPacketSize">24 Bytes + CRC-16</div>
+          </div>
+          <div class="metric-highlight">
+            <div class="k" id="lblZpdTier">CEIT Explanation Mode</div>
+            <div class="v" id="valZpdTier" style="font-size:0.9rem;">Tier 2 Coach</div>
+          </div>
+        </div>
+
+        <div class="vitals-grid" id="vitalsGrid"></div>
+
+        <div class="actions-box" id="actionsBox"></div>
+      </section>
+    </main>
+
+    <!-- Lower Multi-Tab Workspace -->
+    <section class="panel" aria-label="Analytics, Pedagogy, Quests and Data Inspector">
+      <div class="tab-bar" role="tablist">
+        <button type="button" class="tab-btn active" data-tab="tabCharts" id="btnTabCharts">ECG &amp; Dynamic Trends</button>
+        <button type="button" class="tab-btn" data-tab="tabGuide" id="btnTabGuide">Non-Medical Crew Guide (CEIT)</button>
+        <button type="button" class="tab-btn" data-tab="tabQuests" id="btnTabQuests">Routines, Gamification &amp; Quiz</button>
+        <button type="button" class="tab-btn" data-tab="tabNasaData" id="btnTabNasaData">NASA OSDR, NOAA &amp; WERR-24 Hex</button>
+      </div>
+
+      <!-- Tab 1: ECG + 14-Sol Trends -->
+      <div class="tab-pane active" id="tabCharts">
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="panel-header">
+              <strong id="lblEcgTitle">Live Lead-II ECG Synthesis</strong>
+              <span class="pill" id="ecgReadoutPill">72 BPM · HRV 52 ms</span>
+            </div>
+            <canvas id="ecgCanvas" width="600" height="170"></canvas>
+            <div class="vital-range-hint" style="margin-top:6px;" id="ecgFootHint">
+              Deterministic P-QRS-T envelope driven live by current HR and SDNN heart rate variability.
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="panel-header">
+              <strong id="lblTrendTitle">14-Sol Multi-Vital Drift Chart</strong>
+              <select id="trendMetricSelect">
+                <option value="heart_rate_bpm">Heart Rate (BPM)</option>
+                <option value="spo2_pct">SpO2 (%)</option>
+                <option value="blood_glucose_mgdl">Blood Glucose (mg/dL)</option>
+                <option value="sleep_hours">Sleep Duration (h)</option>
+                <option value="dose_rate_msv_day">Radiation Dose (mSv/day)</option>
+              </select>
+            </div>
+            <svg id="trendSvg" viewBox="0 0 540 170" style="width:100%;height:170px;background:#060e1a;border-radius:8px;"></svg>
+            <div class="vital-range-hint" style="margin-top:6px;" id="trendFootHint">
+              Shaded emerald band marks NASA operational nominal range for selected indicator.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Non-Medical Crew Guide (CEIT) -->
+      <div class="tab-pane" id="tabGuide">
+        <div id="ceitGuideContainer"></div>
+      </div>
+
+      <!-- Tab 3: Routines, Gamification & Micro-Quiz -->
+      <div class="tab-pane" id="tabQuests">
+        <div class="quests-grid">
+          <div>
+            <div class="panel-header">
+              <strong id="lblQuestHeader">Mission Routine Prompts &amp; XP</strong>
+              <span class="pill status-optimal" id="gamifyRankPill">Rank: Specialist</span>
+            </div>
+            <div class="vital-range-hint" id="gamifyXpSummary">0 XP · 0/5 daily checks · Streak 3 days</div>
+            <div class="xp-bar-wrap"><div class="xp-bar-fill" id="xpBarFill"></div></div>
+            <div class="badge-list" id="badgeList"></div>
+            <div id="questList" style="margin-top:10px;"></div>
+          </div>
+
+          <div>
+            <div class="quiz-box" id="quizContainer"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: NASA OSDR, NOAA & WERR-24 Hex -->
+      <div class="tab-pane" id="tabNasaData">
+        <div class="data-grid">
+          <div>
+            <div class="panel-header">
+              <strong id="lblWerrHexTitle">WERR-24 24-Byte Telemetry Packet &amp; SEU Fault Log</strong>
+              <span class="pill status-optimal" id="crcStatusPill">CRC-16 VALID</span>
+            </div>
+            <div class="hex-box" id="packetHexBox"></div>
+            <div id="packetBreakdown" class="vital-range-hint" style="margin-top:8px;"></div>
+            <div id="seuLogBox" class="region-detail-box" style="margin-top:10px;"></div>
+          </div>
+
+          <div>
+            <div class="panel-header">
+              <strong id="lblOsdrTitle">Verified NASA OSDR Studies &amp; NOAA GOES Proton Feed</strong>
+              <button type="button" id="btnRefreshLive">Sync Live Feeds</button>
+            </div>
+            <div id="noaaDetailCard" class="osdr-card" style="margin-bottom:8px;"></div>
+            <div class="osdr-list" id="osdrList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      AstroSoma · NASA Space Apps Challenge 2026 ("Create Health Monitoring Software for Astronauts on Space Missions") ·
+      <a href="https://github.com/Lexovian/astrosoma" target="_blank" rel="noopener">Apache-2.0 Open Source</a> ·
+      Core References: <a href="https://github.com/Lexovian/WerrSoma" target="_blank" rel="noopener">Lexovian/WerrSoma</a> &amp;
+      <a href="https://github.com/jesmaat/WerreduR" target="_blank" rel="noopener">jesmaat/WerreduR</a> ·
+      Contact: <a href="mailto:info@astrosoma.space">info@astrosoma.space</a>
+    </footer>
+  </div>
+
+  <!-- Optical Camera rPPG Modal -->
+  <div class="modal-backdrop" id="rppgModal" role="dialog" aria-modal="true" aria-labelledby="rppgModalTitle">
+    <div class="modal-card">
+      <div class="panel-header">
+        <h3 id="rppgModalTitle" style="margin:0;">Optical rPPG Vital Scanner</h3>
+        <button type="button" id="btnCloseRppg">Close</button>
+      </div>
+      <p class="vital-range-hint" id="rppgExplain">
+        Uses browser camera frames (green-channel PPG brightness delta) to estimate pulse rate safely in-browser, with deterministic optical waveform fallback if no camera is attached.
+      </p>
+      <div class="rppg-preview">
+        <video id="rppgVideo" autoplay muted playsinline></video>
+        <div>
+          <div class="v" id="rppgReadout" style="font-family:var(--font-mono);font-weight:700;font-size:1.1rem;">Ready</div>
+          <div class="vital-range-hint" id="rppgSub">Click Start Scan to sample 4 seconds of optical pulse trace.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;">
+        <button type="button" id="btnRunRppg" class="btn-primary">Start 4s Scan</button>
+        <button type="button" id="btnApplyRppg" disabled>Apply Estimate to Vitals</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/werr24_core.js"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>AstroSoma — NASA Space Apps 2026 Presentation (EN)</title><style>
+    @page { size: 13.333in 7.5in; margin: 0; }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: #060b16; color: #edf4ff;
+      font-family: 'Segoe UI', Inter, Arial, sans-serif;
+    }
+    .slide {
+      width: 13.333in; height: 7.5in;
+      padding: 0.48in 0.62in;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      background: radial-gradient(circle at 88% 12%, #13294b 0%, #070d1b 60%);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .slide:last-child { page-break-after: auto; }
+    .hdr {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.28);
+      padding-bottom: 10px; margin-bottom: 14px;
+    }
+    .eyebrow {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #38bdf8;
+    }
+    .pg { font-size: 13px; color: #93a7c7; font-weight: 600; }
+    h1 { font-size: 42px; line-height: 1.12; margin: 8px 0 14px; color: #ffffff; }
+    h2 { font-size: 30px; line-height: 1.18; margin: 0 0 14px; color: #f8fafc; }
+    h3 { font-size: 17px; margin: 0 0 8px; color: #7dd3fc; }
+    p, li { font-size: 15.5px; line-height: 1.48; color: #dbeafe; margin: 0 0 8px; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; flex: 1; }
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; align-items: stretch; flex: 1; }
+    .hero-grid { display: grid; grid-template-columns: 1.45fr 0.9fr; gap: 30px; align-items: center; flex: 1; }
+    .card {
+      background: rgba(15, 29, 54, 0.88);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 14px; padding: 18px 20px;
+      display: flex; flex-direction: column; justify-content: flex-start;
+    }
+    .kpi { font-size: 28px; font-weight: 800; color: #10b981; font-family: Consolas, monospace; margin-bottom: 4px; }
+    .kpi.warn { color: #f59e0b; }
+    .kpi.cyan { color: #38bdf8; }
+    .patch-wrap {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: rgba(12, 23, 44, 0.82); border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 18px; padding: 20px;
+    }
+    .patch-wrap img { width: 310px; height: 310px; border-radius: 16px; object-fit: cover; }
+    .pill {
+      display: inline-block; padding: 4px 11px; border-radius: 999px;
+      font-size: 12.5px; font-weight: 700; margin-right: 6px; margin-bottom: 6px;
+      background: rgba(56, 189, 248, 0.16); color: #bae6fd; border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    .pill.green { background: rgba(16, 185, 129, 0.16); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 6px; }
+    th, td { border: 1px solid rgba(56, 189, 248, 0.24); padding: 7px 10px; text-align: left; }
+    th { background: rgba(56, 189, 248, 0.14); color: #7dd3fc; font-weight: 700; }
+    code { font-family: Consolas, monospace; background: rgba(2, 6, 23, 0.75); padding: 2px 6px; border-radius: 5px; color: #7dd3fc; font-size: 13.5px; }
+    .ftr {
+      border-top: 1px solid rgba(56, 189, 248, 0.2);
+      padding-top: 8px; margin-top: 12px;
+      display: flex; justify-content: space-between; font-size: 12.5px; color: #93a7c7;
+    }
+    </style></head><body>
+        <section class="slide">
+          <div class="hdr"><span class="eyebrow">NASA Space Apps Challenge 2026 · Universal Event</span><span class="pg">1 / 7</span></div>
+          <div class="hero-grid">
+            <div>
+              <span class="pill green">LIVE: https://astrosoma.space/</span>
+              <span class="pill">0-SRAM Autonomous Triage</span>
+              <span class="pill">CEIT Adaptive Crew UX</span>
+              <h1>AstroSoma</h1>
+              <p style="font-size:20px;color:#7dd3fc;font-weight:600;margin-bottom:18px;">
+                Zero-SRAM Bioneural &amp; Homeostatic Health Monitoring Software for Astronauts on Space Missions
+              </p>
+              <div class="card">
+                <p><b>Team Owner:</b> Dağhan Dağlı (<code>@Lexovian</code>) — AI &amp; Systems Architecture (<i>Lexovian/WerrSoma</i>)</p>
+                <p><b>Co-Investigator:</b> Dr. Zerrin Dağlı (<code>@jesmaat</code>) — Ph.D., Department of Computer Education &amp; Instructional Technology (CEIT), Mersin Univ. (<i>jesmaat/WerreduR</i>)</p>
+                <p style="margin-bottom:0;"><b>Open Source &amp; Contact:</b> <code>github.com/Lexovian/astrosoma</code> (Apache-2.0) · <code>info@astrosoma.space</code></p>
+              </div>
+            </div>
+            <div class="patch-wrap">
+              <img src="file:///C:/Users/maat/Documents/antigravity/wonderful-raman/spaceapps_2026/astrosoma/assets/astrosoma_mission_patch.jpg" alt="AstroSoma Mission Patch">
+              <div style="margin-top:10px;font-size:13px;color:#93a7c7;">Mission Patch (SI-GENERATED) · WERR-24 &amp; CEIT</div>
+            </div>
+          </div>
+          <div class="ftr"><span>Challenge: Create Health Monitoring Software for Astronauts on Space Missions</span><span>astrosoma.space</span></div>
+        </section>
+        <section class="slide">
+          <div class="hdr"><span class="eyebrow">Deep-Space Problem &amp; NASA HRP 5 Hazards</span><span class="pg">2 / 7</span></div>
+          <h2>Why Astronaut Health Monitoring Must Be Radiation-Resilient &amp; Autonomous</h2>
+          <div class="grid2">
+            <div class="card">
+              <h3>NASA HRP 5 Hazards of Human Spaceflight</h3>
+              <ul>
+                <li><b>Space Radiation:</b> Galactic Cosmic Rays (GCR) &amp; Solar Proton Events (SPE) increase biological dose AND trigger Single-Event Upsets (SEUs) in avionics SRAM.</li>
+                <li><b>Distance from Earth:</b> Mars transit reaches <b>22-minute one-way latency</b> — flight surgeons cannot intervene live.</li>
+                <li><b>Altered Gravity Fields:</b> Causes cephalad fluid shift (<b>SANS</b>), ~1–1.5%/mo bone mineral loss, and orthostatic intolerance.</li>
+                <li><b>Isolation &amp; Closed Cabin:</b> 16 orbital sunrises/day impair sleep; rising <b>CO2</b> causes headache before SpO2 drops.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Why Heavy Learned Weights Fail Deep Space</h3>
+              <div class="kpi warn">SRAM Bit-Flip Vulnerability</div>
+              <p>Conventional neural networks store megabytes to gigabytes of learned parameters in mutable SRAM. A single unmitigated cosmic-ray bit-flip can silently distort triage thresholds when Earth links are unavailable.</p>
+              <div style="margin-top:12px;" class="kpi">AstroSoma Defense: 0 Bytes Weight RAM</div>
+              <p>Deterministic <code>WERR-24</code> procedural escape boundary + transparent <code>NASA-STD-3001</code> guardrails + <code>CRC-16/CCITT-FALSE</code> packet authentication.</p>
+            </div>
+          </div>
+          <div class="ftr"><span>NASA HRP 5 Hazards &amp; CSA Radiation Research</span><span>astrosoma.space · 2 / 7</span></div>
+        </section>
+        <section class="slide">
+          <div class="hdr"><span class="eyebrow">Core Architecture · Anchored to Lexovian/WerrSoma</span><span class="pg">3 / 7</span></div>
+          <h2>Dual-Layer Triage: Clinical Guardrails + 24-Byte 0-SRAM WERR-24 Protocol</h2>
+          <div class="grid2">
+            <div class="card">
+              <h3>Immutable 192-Bit (24-Byte) Telemetry Frame</h3>
+              <table>
+                <tr><th>Bytes</th><th>Fields</th><th>Quantization Resolution</th></tr>
+                <tr><td><code>0..1</code></td><td>Magic + Environment ID</td><td><code>0xA5</code> + 5 Space Environments</td></tr>
+                <tr><td><code>2..9</code></td><td>HR, BP (SBP/DBP), SpO2, Core Temp</td><td>0.1 BPM, 1 mmHg, 0.01%, 0.01°C</td></tr>
+                <tr><td><code>10..17</code></td><td>Glucose, Dose Rate, Sleep, Mood, HRV</td><td>0.1 mg/dL, 1 µSv/d, 1 min, SDNN</td></tr>
+                <tr><td><code>18..23</code></td><td>Cabin pCO2, Cum. Dose, CRC-16</td><td><code>CRC-16/CCITT-FALSE</code> over 0..22</td></tr>
+              </table>
+            </div>
+            <div class="card">
+              <h3>Zero-SRAM Procedural Homeostatic Index (<code>z → z² + c</code>)</h3>
+              <p>12 physiological &amp; habitat variables normalize into a 4D strain vector mapped onto the quadratic stability boundary (32 iterations):</p>
+              <ul>
+                <li><b>Mutable Neural Weight RAM:</b> <code>0 Bytes</code> — zero weight corruption vector.</li>
+                <li><b>Cross-Runtime Parity:</b> Bit-identical 24-byte frames &amp; reserve scores verified across Python &amp; browser JS.</li>
+                <li><b>Clinical Safety First:</b> Explicit NASA-STD-3001 / ALARA limits always govern alerts transparently.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ftr"><span>WerrSoma Reference DOI: 10.5281/zenodo.22996625</span><span>astrosoma.space · 3 / 7</span></div>
+        </section>
+        <section class="slide">
+          <div class="hdr"><span class="eyebrow">Challenge UX Fulfillment</span><span class="pg">4 / 7</span></div>
+          <h2>Interactive Human Anatomy, Multi-Modal Inputs &amp; 5 Space Environments</h2>
+          <div class="grid3">
+            <div class="card">
+              <h3>7 Clickable Body Systems</h3>
+              <ul>
+                <li><b>Neuro / Brain:</b> Sleep &amp; Mood readiness</li>
+                <li><b>Ocular (SANS):</b> Cephalad fluid &amp; pCO2 watch</li>
+                <li><b>Cardiovascular:</b> Lead-II ECG, HR, BP &amp; HRV</li>
+                <li><b>Respiratory:</b> SpO2 + Cabin pCO2 co-alerts</li>
+                <li><b>Metabolic:</b> Capillary glucose &amp; hydration</li>
+                <li><b>Musculoskeletal:</b> Core temp &amp; ARED bone loading</li>
+                <li><b>Immune &amp; Radiation:</b> ALARA + GOES flux</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Multi-Modal Data Capture</h3>
+              <ul>
+                <li><b>Keyboard / Sliders:</b> Instant sensitivity exploration across all 12 metrics.</li>
+                <li><b>Webcam Optical rPPG:</b> Browser <code>getUserMedia</code> green-channel pulse estimation (+ deterministic optical waveform fallback).</li>
+                <li><b>JSON / CSV Import:</b> Replays wearable &amp; portable ultrasound telemetry logs.</li>
+                <li><b>Dynamic Charts:</b> Real-time Canvas P-QRS-T ECG &amp; 14-Sol nominal band trends.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>5 Mission Environments</h3>
+              <ul>
+                <li><b>ISS Station:</b> 0 g, live flight surgeon link</li>
+                <li><b>Orion Spacecraft:</b> Transit relay &amp; water-wall storm shelter</li>
+                <li><b>Surface Rover:</b> EVA CO2 scrubber &amp; thermal watch</li>
+                <li><b>Artemis Lunar Base:</b> 0.165 g + regolith overburden</li>
+                <li><b>Mars Transit / Hab:</b> Up to 22-min delay — Autonomous Mode</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ftr"><span>Live Web Console: https://astrosoma.space/</span><span>astrosoma.space · 4 / 7</span></div>
+        </section>
+        <section class="slide">
+          <div class="hdr"><span class="eyebrow">CEIT Adaptive Pedagogy · Anchored to jesmaat/WerreduR</span><span class="pg">5 / 7</span></div>
+          <h2>Plain-Language Crew Explanations &amp; Gamified Health Routines</h2>
+          <div class="grid2">
+            <div class="card">
+              <h3>Adaptive <code>LearningGate</code> (Dept. of CEIT, Mersin Univ.)</h3>
+              <p>Built on Dr. Zerrin Dağlı's <i>Procedural Fractal Pedagogy</i> (SSRN <code>7641538</code>), cognitive reserve (sleep + mood) and mastery dynamically select the ZPD tier:</p>
+              <ul>
+                <li><b>Tier 1 (High Fatigue / Stress):</b> Ultra-clear analogy, step-by-step measurement tip, and one immediate action.</li>
+                <li><b>Tier 2 (Crew Coach):</b> Spaceflight rationale (why rising CO2 impairs judgment before SpO2 drops).</li>
+                <li><b>Tier 3 (Medical Liaison):</b> Full NASA HRP hazard cross-references and clinical operational bands.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Scheduled Routine Prompts &amp; Gamification</h3>
+              <div class="kpi cyan">+290 XP Daily Mission Adherence Loop</div>
+              <ul>
+                <li><b>Routine Check-ins:</b> Morning Rest BP/SpO2, 11:00 ARED Bone Loading (45 min), Hydration/Glucose Sync, Dosimeter Sync, Evening Circadian Dimming.</li>
+                <li><b>Milestones &amp; Badges:</b> <i>ARED Iron Spine</i>, <i>ALARA Shield Steward</i>, <i>Circadian Guardian</i>.</li>
+                <li><b>Interactive Micro-Quiz:</b> Builds non-medical crew autonomy across orbital and surface emergencies.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ftr"><span>WerreduR Zenodo Archive DOI: 10.5281/zenodo.23128224</span><span>astrosoma.space · 5 / 7</span></div>
+        </section>
+        <section class="slide">
+          <div class="hdr"><span class="eyebrow">Verified Real NASA Telemetry &amp; Automated Testing</span><span class="pg">6 / 7</span></div>
+          <h2>Live NASA OSDR + NOAA SWPC Feeds &amp; Reproducible Verification</h2>
+          <div class="grid2">
+            <div class="card">
+              <h3>Real Flight &amp; Space Weather Endpoints</h3>
+              <p><b>NOAA SWPC GOES Live:</b> &ge;10 MeV Proton Flux = <code>0.207 pfu</code> (S0 (Quiet)), <b>Kp = 1.0</b>.</p>
+              <table>
+                <tr><th>OSDR ID</th><th>Organism</th><th>Verified NASA OSDR Study</th></tr>
+                <tr><td><code>OSD-340</code></td><td>Mus musculus</td><td>Mlh1 deficiency increases the risk of hematopoietic malignancy after simulated...</td></tr><tr><td><code>OSD-334</code></td><td>Mus musculus</td><td>miRNA signature detection and countermeasures against HZE radiation exposure f...</td></tr><tr><td><code>OSD-812</code></td><td>Homo sapiens</td><td>Simulated microgravity impairs human NK cell cytotoxic activity against space ...</td></tr><tr><td><code>OSD-52</code></td><td>Homo sapiens</td><td>Expression data from SPHINX (SPaceflight of Huvec: an INtegrated eXperiment)...</td></tr>
+              </table>
+            </div>
+            <div class="card">
+              <h3>Empirical Engineering Checks</h3>
+              <div class="kpi">6 / 6 Automated Tests Passing</div>
+              <ul>
+                <li><b>Cross-Runtime Bit-Exact Parity:</b> Python (<code>codec_werr24.py</code>) and JS (<code>werr24_core.js</code>) match byte-for-byte via Node.js CI verification.</li>
+                <li><b>Exhaustive 192-Bit SEU Fault Sweep:</b> Every single bit-flip across the 24-byte frame is flagged by <code>CRC-16</code> while neural weight RAM stays at <code>0 Bytes</code>.</li>
+                <li><b>Cloudflare Pages Edge Proxy:</b> <code>/api/nasa-osdr</code> resolves browser CORS cleanly with versioned JSON fallback.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ftr"><span>osdr.nasa.gov · services.swpc.noaa.gov</span><span>astrosoma.space · 6 / 7</span></div>
+        </section>
+        <section class="slide">
+          <div class="hdr"><span class="eyebrow">Open-Source Deployment &amp; Next Horizons</span><span class="pg">7 / 7</span></div>
+          <h2>Ready for Analog Crews &amp; Deep-Space Validation</h2>
+          <div class="grid2">
+            <div class="card">
+              <h3>Verified Project Links</h3>
+              <ul>
+                <li><b>Live Console:</b> <code>https://astrosoma.space/</code> (Cloudflare Pages, Full Strict SSL)</li>
+                <li><b>GitHub Repository:</b> <code>https://github.com/Lexovian/astrosoma</code> (Apache-2.0)</li>
+                <li><b>NASA Space Apps Team:</b> <code>spaceappschallenge.org/2026/find-a-team/astrosoma1/</code></li>
+                <li><b>Team Email:</b> <code>info@astrosoma.space</code></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Post-Hackathon Roadmap</h3>
+              <ul>
+                <li><b>Sensor Bridge:</b> Direct WebSerial / microcontroller WERR-24 framing from Arduino &amp; wearable PPG/dosimeter hardware.</li>
+                <li><b>OSDR/ALSDA Replay:</b> Streaming historical spaceflight physiology cohorts directly through the clinical guardrail evaluator.</li>
+                <li><b>Analog Habitat Trials:</b> Bilingual EN/TR CEIT usability evaluation with non-medical analog crew volunteers.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ftr"><span>Team AstroSoma · Dağhan Dağlı &amp; Dr. Zerrin Dağlı</span><span>NASA Space Apps Challenge 2026</span></div>
+        </section></body></html>

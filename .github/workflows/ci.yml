@@ -1,0 +1,46 @@
+name: AstroSoma CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Python test dependency
+        run: python -m pip install --upgrade pip pytest
+
+      - name: Run unit & Python<->JS WERR-24 parity tests
+        run: python -m pytest -v tests/test_astrosoma_core.py
+
+      - name: Verify CLI scenario evaluation & SEU bit-flip test
+        env:
+          PYTHONPATH: src
+        run: python -m astrosoma.cli --scenario solar_storm --simulate-seu
+
+      - name: Verify required static & edge deliverables exist
+        run: |
+          test -f index.html
+          test -f assets/js/werr24_core.js
+          test -f assets/js/app.js
+          test -f functions/api/nasa-osdr.js
+          test -f data/verified_nasa_telemetry.json
+          test -f docs/AstroSoma_Presentation_EN.pdf
+          test -f docs/AstroSoma_Presentation_TR.pdf

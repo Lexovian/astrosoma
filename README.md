@@ -1,67 +1,112 @@
-# 🚀 AstroSoma — Astronaut Bioneural & Autonomous Health Monitoring Software
-
-<p align="center">
-  <a href="https://www.spaceappschallenge.org/2026/find-a-team/astrosoma1/?tab=details"><img src="https://img.shields.io/badge/NASA%20Space%20Apps%202026-AstroSoma-0b3d91?logo=nasa&logoColor=white" alt="NASA Space Apps Challenge 2026"></a>
-  <a href="https://www.spaceappschallenge.org/2026/find-a-team/astrosoma1/?tab=details"><img src="https://img.shields.io/badge/Location-Universal%20Event%20(Anywhere%20in%20the%20World)-1d4ed8" alt="Universal Event"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-10b981.svg" alt="License: Apache-2.0"></a>
-  <a href="https://github.com/Lexovian/WerrSoma"><img src="https://img.shields.io/badge/Core%20Engine%20Ref-Lexovian%2FWerrSoma-181717?logo=github" alt="Core Reference: Lexovian/WerrSoma"></a>
-  <a href="https://github.com/nasa/spaceapps"><img src="https://img.shields.io/badge/Community-nasa%2Fspaceapps-blue?logo=github" alt="NASA Space Apps GitHub"></a>
-</p>
-
-> **Autonomous Bioneural & Homeostatic Health Monitoring Software for Astronauts on Deep-Space and Orbital Missions.**
-
----
-
-## 🛰️ Mission & Challenge Overview
-
-| Field | Details |
-| :--- | :--- |
-| **Project Name** | **AstroSoma** — Astronaut Bioneural & Autonomous Health Monitoring Software |
-| **Event** | **NASA Space Apps Challenge 2026** (`Universal Event, Anywhere in the World`) |
-| **Challenge** | **Create Health Monitoring Software for Astronauts on Space Missions** |
-| **Team Page** | [spaceappschallenge.org/2026/find-a-team/astrosoma1/?tab=details](https://www.spaceappschallenge.org/2026/find-a-team/astrosoma1/?tab=details) |
-| **Team Members Page** | [spaceappschallenge.org/2026/find-a-team/astrosoma1/?tab=members](https://www.spaceappschallenge.org/2026/find-a-team/astrosoma1/?tab=members) |
-| **Core Infrastructure Reference** | [github.com/Lexovian/WerrSoma](https://github.com/Lexovian/WerrSoma) |
-| **Official Community & Legal** | [github.com/nasa/spaceapps](https://github.com/nasa/spaceapps) \| [spaceappschallenge.org/legal](https://www.spaceappschallenge.org/legal/) |
-| **License** | [Apache License 2.0](LICENSE) |
+<div align="center">
+  <img src="assets/astrosoma_mission_patch.jpg" alt="AstroSoma Mission Patch (SI-GENERATED)" width="220" />
+  <h1>AstroSoma</h1>
+  <p><strong>Zero-SRAM Bioneural &amp; Homeostatic Health Monitoring Software for Astronauts on Space Missions</strong></p>
+  <p>
+    <a href="https://astrosoma.space/">Live Console (https://astrosoma.space/)</a> ·
+    <a href="docs/AstroSoma_Presentation_EN.pdf">Presentation PDF (EN)</a> ·
+    <a href="docs/AstroSoma_Presentation_TR.pdf">Sunum PDF (TR)</a> ·
+    <a href="docs/ARCHITECTURE.md">Architecture</a>
+  </p>
+</div>
 
 ---
 
-## 👥 Team AstroSoma
+## Challenge & Mission Overview
 
-Official team roster: [AstroSoma Team Members](https://www.spaceappschallenge.org/2026/find-a-team/astrosoma1/?tab=members)
+Built for the **NASA Space Apps Challenge 2026** (*Create Health Monitoring Software for Astronauts on Space Missions*), **AstroSoma** provides a standalone, offline-first medical & wellness dashboard engineered for **non-medical flight crews** operating across **Crew Spacecraft (Orion)**, **Orbital Space Stations (ISS)**, **Pressurized Surface Rovers**, **Artemis Lunar Habitat Bases**, and **Mars Transit Habitats** (up to 22-minute one-way signal blackout).
 
-- **DAGHAN DAGLI** — *Team Owner*
-- **ZERRIN DAGLI** — *Team Member*
+### Key Capabilities
 
----
-
-## 🧠 Core Bioneural & Zero-SRAM Architecture Reference
-
-**AstroSoma** builds upon the architectural principles established in **[Lexovian/WerrSoma](https://github.com/Lexovian/WerrSoma)** as its core bioneural / 0-SRAM decision engine and homeostatic bioprotection reference:
-
-- **Ultra-Low-Latency Autonomous Triage:** Deterministic, zero-memory-overhead physiological anomaly detection designed for communication-delayed spaceflight environments (LEO, Cis-Lunar, and Mars transit).
-- **Homeostatic Bioprotection:** Continuous multi-modal biosignal assessment supporting astronaut autonomy when Earth-based flight surgeons are unreachable in real time.
-- **Separation of Concerns:** `Lexovian/WerrSoma` remains preserved in its canonical repository as the foundational bioneural / 0-SRAM engine reference, while `Lexovian/astrosoma` houses the open-source NASA Space Apps Challenge 2026 astronaut health monitoring software stack under the Apache-2.0 license.
+- **Dual-Layer Safe Triage:** Combines deterministic **NASA-STD-3001 / AHA / ALARA clinical guardrails** across **7 clickable human anatomy regions** (`neuro`, `ocular`, `cardio`, `resp`, `metab`, `musculo`, `immune_rad`) with the zero-SRAM `WERR-24` homeostatic stability engine (`0 bytes` of mutable neural weight SRAM).
+- **24-Byte (`192-bit`) `WERR-24` Telemetry & SEU Resilience:** Packs 12 physiological/cabin indicators + environment ID into `24 bytes` protected by `CRC-16/CCITT-FALSE`, detecting `192/192` single-bit cosmic-ray upsets without weight corruption.
+- **CEIT `LearningGate` Crew UX & Gamification:** Translates telemetry into clear plain-language explanations, Zone of Proximal Development (ZPD) Tier 1/2/3 adaptive guidance, daily `290 XP` adherence missions, badges, and interactive micro-quizzes for non-medical crew members.
+- **Sensor & Live Space-Weather Integration:** Includes experimental webcam optical rPPG pulse estimation, JSON/CSV sensor import, Lead-II ECG & 14-Sol trend plotting, live **NOAA SWPC** solar proton (`>=10 MeV`) & `Kp` tracking, and **NASA OSDR** study linking via Cloudflare Pages Edge (`/api/nasa-osdr`), backed by a verified offline JSON cache (`data/verified_nasa_telemetry.json`).
+- **Bilingual Interface (`EN` / `TR`)**: Instant full-console language switch and synchronized 7-slide HTML & PDF presentations (`demo/slides_en.html`, `demo/slides_tr.html`).
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 astrosoma/
-├── assets/      # Visual assets, UI media, diagrams, and mission presentation materials
-├── docs/        # System architecture, physiological metrics documentation, and Space Apps deliverables
-├── src/         # AstroSoma autonomous astronaut health monitoring & telemetry software source code
-├── tests/       # Automated unit, integration, and simulated mission telemetry test suites
-├── LICENSE      # Apache License 2.0
-└── README.md    # Project overview, team roster, and challenge metadata
+├── index.html                          # Interactive bilingual web console (EN / TR)
+├── assets/
+│   ├── astrosoma_mission_patch.jpg     # Watermarked mission patch (SI-GENERATED)
+│   ├── css/styles.css                  # Aerospace dark-mode responsive stylesheet
+│   └── js/
+│       ├── werr24_core.js              # Bit-exact JS engine matching Python codec & triage
+│       └── app.js                      # 7-region SVG anatomy, ECG/trends, rPPG & quizzes
+├── functions/api/nasa-osdr.js          # Cloudflare Pages Function CORS proxy for NASA OSDR
+├── data/
+│   ├── verified_nasa_telemetry.json    # Cached live NASA OSDR studies & NOAA SWPC feeds
+│   └── hrp_hazards_catalog.json        # Structured mapping to 5 NASA HRP Hazards
+├── src/astrosoma/
+│   ├── codec_werr24.py                 # 24-byte WERR-24 binary codec & CRC-16 SEU test
+│   ├── clinical_triage.py              # 5 environments, 7 anatomy regions, clinical limits
+│   ├── pedagogy_engine.py              # CEIT LearningGate ZPD engine, quests & quizzes
+│   ├── nasa_data_client.py             # TLS-verified NASA OSDR & NOAA SWPC sync client
+│   ├── cli.py                          # CLI evaluator (--scenario, --simulate-seu, --sync-nasa)
+│   └── build_presentations.py          # Renders 7-slide EN/TR HTML decks & PDF exports
+├── tests/test_astrosoma_core.py        # Pytest suite + Python<->Node.js bit-exact parity
+├── demo/                               # Standalone EN & TR interactive HTML slide decks
+└── docs/                               # ARCHITECTURE.md & EN/TR PDF pitch presentations
 ```
 
 ---
 
-## 📜 Official Community, Rules & Licensing
+## Quick Start
 
-- **NASA Space Apps Official Community:** [https://github.com/nasa/spaceapps](https://github.com/nasa/spaceapps)
-- **NASA Space Apps Legal & Participant Terms:** [https://www.spaceappschallenge.org/legal/](https://www.spaceappschallenge.org/legal/)
-- **Repository License:** Distributed under the **Apache License, Version 2.0**. See [`LICENSE`](LICENSE) for full terms.
+### 1. Run Automated Verification & Python ↔ JavaScript Parity Tests
+
+Requires Python `3.10+` (`pytest`) and Node.js `18+`:
+
+```bash
+python -m pytest -v tests/test_astrosoma_core.py
+```
+
+### 2. Run CLI Telemetry, Triage & SEU Simulation
+
+```bash
+# Inspect Mars signal-delay blackout or solar storm telemetry with SEU fault injection
+PYTHONPATH=src python -m astrosoma.cli --scenario solar_storm --simulate-seu
+PYTHONPATH=src python -m astrosoma.cli --scenario mars_blackout --simulate-seu
+
+# Refresh live NASA OSDR & NOAA SWPC datasets into data/verified_nasa_telemetry.json
+PYTHONPATH=src python -m astrosoma.cli --sync-nasa
+```
+
+### 3. Open the Web Console Locally
+
+Serve the repository root with any static HTTP server (required for `fetch('./data/verified_nasa_telemetry.json')`):
+
+```bash
+python -m http.server 8080
+```
+
+Then visit `http://localhost:8080/` or open the live deployment at **[https://astrosoma.space/](https://astrosoma.space/)**.
+
+---
+
+## Team & Scientific Foundations
+
+| Member | Handle | Role & Affiliation |
+| --- | --- | --- |
+| **Dağhan Dağlı** | `@Lexovian` | Team Owner — AI & Systems Architecture (`Lexovian/WerrSoma`) |
+| **Dr. Zerrin Dağlı** | `@jesmaat` | Co-Investigator — Ph.D., Department of Computer Education and Instructional Technology (CEIT), Mersin University (`jesmaat/WerreduR`) |
+| **Volkan / `@pCwOrM`** | `@pCwOrM` | Collaborator — Cloud Infrastructure, Full-Stack Integration & Space Apps Ops |
+
+### Foundational Open-Source & Research Works
+
+- **0-SRAM Procedural Homeostasis Engine:** `Lexovian/WerrSoma` — Zenodo DOI: `10.5281/zenodo.22996625`
+- **Adaptive LearningGate & Procedural Fractal Pedagogy:** `jesmaat/WerreduR` — SSRN: `7641538` · Zenodo DOI: `10.5281/zenodo.23128224`
+- **Official Telemetry & Hazard Sources:** NASA Human Research Program (HRP 5 Hazards), NASA Open Science Data Repository (OSDR), NOAA Space Weather Prediction Center (SWPC), Canadian Space Agency (CSA/ASC).
+
+---
+
+## Contact & Disclaimer
+
+- **Team Email:** `info@astrosoma.space`
+- **NASA Space Apps Team:** [spaceappschallenge.org/2026/find-a-team/astrosoma1/](https://www.spaceappschallenge.org/2026/find-a-team/astrosoma1/)
+- **Disclaimer:** AstroSoma is a functional software prototype built for the NASA Space Apps Challenge 2026 for simulation, crew education, and telemetry prototyping; it is not a cleared clinical diagnostic device.
+- **License:** [Apache-2.0](LICENSE)
