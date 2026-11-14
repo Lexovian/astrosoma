@@ -152,10 +152,15 @@
 
   const UI_I18N = {
     en: {
+      pageTitle: 'AstroSoma — Autonomous Astronaut Health Monitoring Console',
       brandSub: '0-SRAM Autonomous Astronaut Health & Homeostasis Console',
       lblEnv: 'Mission Environment',
       lblRole: 'Crew Role (CEIT Adaptive UX)',
       lblScenarios: 'Scenarios:',
+      scNominal: 'Nominal Orbit',
+      scStorm: 'Solar Proton Storm (SPE)',
+      scRover: 'Rover CO2 & Hypoglycemia',
+      scMars: 'Mars 22-min Blackout',
       anatomyHeading: 'Interactive Human Anatomy',
       clickHintPill: 'Click body region',
       telemetryHeading: 'Physiological Indicators & 0-SRAM Triage',
@@ -174,20 +179,45 @@
       btnSeuTest: 'Simulate Cosmic-Ray SEU Bit-Flip',
       btnExportJson: 'Export WERR-24',
       lblEcgTitle: 'Live Lead-II ECG Synthesis',
+      ecgFootHint: 'Deterministic P-QRS-T envelope driven live by current HR and SDNN heart rate variability.',
       lblTrendTitle: '14-Sol Multi-Vital Drift Chart',
+      trendFootHint: 'Shaded emerald band marks NASA operational nominal range for selected indicator.',
       lblQuestHeader: 'Mission Routine Prompts & XP',
       lblWerrHexTitle: 'WERR-24 24-Byte Telemetry Packet & SEU Fault Log',
       lblOsdrTitle: 'Verified NASA OSDR Studies & NOAA GOES Proton Feed',
+      btnRefreshLive: 'Sync Live Feeds',
+      crcStatusPill: 'CRC-16 VALID',
+      rppgModalTitle: 'Optical rPPG Vital Scanner',
+      rppgExplain: 'Uses browser camera frames (green-channel PPG brightness delta) to estimate pulse rate safely in-browser, with deterministic optical waveform fallback if no camera is attached.',
+      btnCloseRppg: 'Close',
+      btnRunRppg: 'Start 4s Scan',
+      btnApplyRppg: 'Apply Estimate to Vitals',
+      rppgReadySub: 'Click Start Scan to sample 4 seconds of optical pulse trace.',
+      footerSlidesLink: '7-Slide HTML Deck (EN)',
+      footerArchLink: 'Apache-2.0 Open Source',
+      footerRefsLbl: 'Core References',
+      footerContactLbl: 'Contact',
+      svgLblImmune: 'IMMUNE & RADIATION SHIELD',
+      svgLblNeuro: 'NEURO',
+      svgLblResp: 'RESP',
+      svgLblCardio: 'CARDIO',
+      svgLblMetab: 'METAB',
+      svgLblMusculo: 'BONE / °C',
       meaningLbl: 'What It Means (Plain Language)',
       measureLbl: 'How to Measure Safely',
       actionLbl: 'Immediate Crew Action',
       seuDefault: 'Click "Simulate Cosmic-Ray SEU Bit-Flip" above to flip a random bit inside the 24-byte buffer and test CRC-16 fault detection.',
     },
     tr: {
+      pageTitle: 'AstroSoma — Otonom Astronot Sağlık İzleme Konsolu',
       brandSub: '0-SRAM Otonom Astronot Sağlık ve Homeostaz Konsolu',
       lblEnv: 'Görev Ortamı',
       lblRole: 'Mürettebat Rolü (CEIT Uyarlanır Arayüz)',
       lblScenarios: 'Senaryolar:',
+      scNominal: 'Normal Yörünge',
+      scStorm: 'Güneş Proton Fırtınası (SPE)',
+      scRover: 'Araç CO2 ve Hipoglisemi',
+      scMars: 'Mars 22-dk İletişim Gecikmesi',
       anatomyHeading: 'Etkileşimli İnsan Anatomisi',
       clickHintPill: 'Vücut bölgesine tıkla',
       telemetryHeading: 'Fizyolojik Göstergeler ve 0-SRAM Triyajı',
@@ -206,10 +236,30 @@
       btnSeuTest: 'Kozmik Işın SEU Bit-Kayması Testi',
       btnExportJson: 'WERR-24 Dışa Aktar',
       lblEcgTitle: 'Canlı Lead-II EKG Sentezi',
+      ecgFootHint: 'Güncel kalp hızı (BPM) ve SDNN değişkenliği ile anlık çizilen deterministik P-QRS-T dalgası.',
       lblTrendTitle: '14 Sol Çoklu Gösterge Trend Grafiği',
+      trendFootHint: 'Yeşil gölgeli bant, seçili gösterge için NASA operasyonel normal aralığını gösterir.',
       lblQuestHeader: 'Görev Sağlığı Rutinleri & XP',
       lblWerrHexTitle: 'WERR-24 24-Bayt Paket ve SEU Hata Günlüğü',
       lblOsdrTitle: 'Doğrulanmış NASA OSDR Çalışmaları ve NOAA GOES Akışı',
+      btnRefreshLive: 'Canlı Akışları Eşitle',
+      crcStatusPill: 'CRC-16 GEÇERLİ',
+      rppgModalTitle: 'Optik rPPG Kamera Nabız Tarayıcı',
+      rppgExplain: 'Tarayıcı kamerası karelerinden (yeşil-kanal PPG parlaklık farkı) güvenli şekilde nabız tahmini yapar; kamera yoksa deterministik optik dalga yedeği kullanır.',
+      btnCloseRppg: 'Kapat',
+      btnRunRppg: '4 sn Taramayı Başlat',
+      btnApplyRppg: 'Tahmini Göstergelere Uygula',
+      rppgReadySub: '4 saniyelik optik nabız örneklemesi için Taramayı Başlat düğmesine tıklayın.',
+      footerSlidesLink: '7 Slaytlık HTML Sunumu (TR)',
+      footerArchLink: 'Apache-2.0 Açık Kaynak',
+      footerRefsLbl: 'Temel Referanslar',
+      footerContactLbl: 'İletişim',
+      svgLblImmune: 'BAĞIŞIKLIK VE RADYASYON KALKANI',
+      svgLblNeuro: 'NÖRO',
+      svgLblResp: 'SOLUNUM',
+      svgLblCardio: 'KARDİYO',
+      svgLblMetab: 'METAB',
+      svgLblMusculo: 'KEMİK / °C',
       meaningLbl: 'Basit Anlamı',
       measureLbl: 'Doğru Ölçüm Adımı',
       actionLbl: 'Şu An Ne Yapmalısın?',
@@ -217,8 +267,73 @@
     },
   };
 
+  const SELECT_OPTION_I18N = {
+    envSelect: {
+      en: {
+        station: 'ISS Space Station (0 g)',
+        spacecraft: 'Orion Spacecraft (Transit)',
+        rover: 'Pressurized Surface Rover',
+        lunar_base: 'Artemis Lunar Base (0.165 g)',
+        mars_transit: 'Mars Transit & Habitat (22m delay)',
+      },
+      tr: {
+        station: 'ISS Uzay İstasyonu (0 g)',
+        spacecraft: 'Orion Uzay Aracı (Transit)',
+        rover: 'Basınçlı Yüzey Keşif Aracı',
+        lunar_base: 'Artemis Ay Üssü (0.165 g)',
+        mars_transit: 'Mars Transit ve Üs (22 dk gecikme)',
+      },
+    },
+    roleSelect: {
+      en: {
+        non_medical_pilot: 'Non-Medical Pilot / Specialist',
+        flight_engineer: 'EVA / Flight Engineer',
+        flight_surgeon_liaison: 'Crew Medical Officer / Liaison',
+      },
+      tr: {
+        non_medical_pilot: 'Tıp Dışı Pilot / Görev Uzmanı',
+        flight_engineer: 'EVA / Uçuş Mühendisi',
+        flight_surgeon_liaison: 'Mürettebat Sağlık Sorumlusu',
+      },
+    },
+    trendMetricSelect: {
+      en: {
+        heart_rate_bpm: 'Heart Rate (BPM)',
+        spo2_pct: 'SpO2 (%)',
+        blood_glucose_mgdl: 'Blood Glucose (mg/dL)',
+        sleep_hours: 'Sleep Duration (h)',
+        dose_rate_msv_day: 'Radiation Dose (mSv/day)',
+      },
+      tr: {
+        heart_rate_bpm: 'Kalp Atış Hızı (BPM)',
+        spo2_pct: 'Kan Oksijeni SpO2 (%)',
+        blood_glucose_mgdl: 'Kan Şekeri (mg/dL)',
+        sleep_hours: 'Uyku Süresi (sa)',
+        dose_rate_msv_day: 'Radyasyon Dozu (mSv/gün)',
+      },
+    },
+  };
+
+  const HAZARD_TR = {
+    'Space Radiation': 'Uzay Radyasyonu',
+    'Isolation & Confinement': 'İzolasyon ve Kapalı Ortam',
+    'Distance from Earth': "Dünya'dan Uzaklık",
+    'Gravity Fields': 'Değişen Yerçekimi',
+    'Hostile/Closed Environments': 'Zorlu / Kapalı Ortam',
+  };
+
+  function getInitialLang() {
+    try {
+      const qs = new URLSearchParams(window.location.search).get('lang');
+      if (qs === 'tr' || qs === 'en') return qs;
+      const saved = window.localStorage.getItem('astrosoma_lang');
+      if (saved === 'tr' || saved === 'en') return saved;
+    } catch (_) {}
+    return 'en';
+  }
+
   let state = {
-    lang: 'en',
+    lang: getInitialLang(),
     scenario: 'nominal',
     selectedRegion: 'cardio',
     vitals: Object.assign({}, SCENARIO_PRESETS.nominal),
@@ -287,14 +402,35 @@
 
   function applyI18nStatic() {
     const t = UI_I18N[state.lang];
+    document.documentElement.lang = state.lang;
+    document.title = t.pageTitle;
     Object.keys(t).forEach((id) => {
       const node = document.getElementById(id);
-      if (node && id !== 'seuDefault' && !id.endsWith('Lbl')) {
+      if (node && id !== 'seuDefault' && id !== 'pageTitle' && !id.endsWith('Lbl')) {
         node.textContent = t[id];
       }
     });
+    const footerRefs = document.getElementById('footerRefsLbl');
+    if (footerRefs) footerRefs.textContent = t.footerRefsLbl;
+    const footerContact = document.getElementById('footerContactLbl');
+    if (footerContact) footerContact.textContent = t.footerContactLbl;
+
+    Object.keys(SELECT_OPTION_I18N).forEach((selectId) => {
+      const sel = document.getElementById(selectId);
+      const map = SELECT_OPTION_I18N[selectId][state.lang];
+      if (!sel || !map) return;
+      Array.from(sel.options).forEach((opt) => {
+        if (map[opt.value]) opt.textContent = map[opt.value];
+      });
+    });
+
     els.deckLink.href = state.lang === 'tr' ? '/docs/AstroSoma_Presentation_TR.pdf' : '/docs/AstroSoma_Presentation_EN.pdf';
     els.deckLink.textContent = state.lang === 'tr' ? 'Sunum PDF (TR)' : 'Pitch PDF (EN)';
+    const footerSlides = document.getElementById('footerSlidesLink');
+    if (footerSlides) {
+      footerSlides.href = state.lang === 'tr' ? '/demo/slides_tr.html' : '/demo/slides_en.html';
+    }
+    renderNasaFeeds();
   }
 
   function renderAll() {
@@ -318,7 +454,9 @@
 
     const dMin = evalRes.environment.one_way_delay_sec[0];
     const dMax = evalRes.environment.one_way_delay_sec[1];
-    const delayStr = dMax >= 60 ? Math.round(dMin / 60) + '–' + Math.round(dMax / 60) + ' min' : dMin + '–' + dMax + ' s';
+    const delayStr = dMax >= 60
+      ? Math.round(dMin / 60) + '–' + Math.round(dMax / 60) + (state.lang === 'tr' ? ' dk' : ' min')
+      : dMin + '–' + dMax + (state.lang === 'tr' ? ' sn' : ' s');
     els.commsDelayPill.textContent = (state.lang === 'tr' ? 'Sinyal Gecikmesi: ' : 'Delay: ') + delayStr + ' · ' + (state.lang === 'tr' ? evalRes.environment.comms_mode_tr : evalRes.environment.comms_mode_en);
     els.commsDelayPill.className = 'pill ' + (evalRes.autonomous_triage_required ? 'status-watch' : 'status-optimal');
 
@@ -370,7 +508,7 @@
       const name = state.lang === 'tr' ? ind.label_tr : ind.label_en;
       return `<span class="pill status-${ind.status}">${name}: <b>${ind.value} ${ind.unit}</b></span>`;
     }).join(' ');
-    const hazHtml = sel.hrp_hazards.map((h) => `<span class="hazard-tag">NASA HRP: ${h}</span>`).join('');
+    const hazHtml = sel.hrp_hazards.map((h) => `<span class="hazard-tag">NASA HRP: ${state.lang === 'tr' ? (HAZARD_TR[h] || h) : h}</span>`).join('');
 
     els.regionDetailBox.innerHTML = `
       <h3><span>${title}</span><span class="pill status-${sel.status}">${statusLabel(sel.status)}</span></h3>
@@ -379,7 +517,7 @@
       <div><b>${t.meaningLbl}:</b> ${guide[0]}</div>
       <div style="margin-top:4px;"><b>${t.measureLbl}:</b> ${guide[1]}</div>
       <div style="margin-top:4px;color:#7dd3fc;"><b>${t.actionLbl}:</b> ${guide[2]}</div>
-      <div class="vital-range-hint" style="margin-top:5px;">CEIT Mode: ${state.lang === 'tr' ? gate.label_tr : gate.label_en}</div>
+      <div class="vital-range-hint" style="margin-top:5px;">${state.lang === 'tr' ? 'CEIT Modu' : 'CEIT Mode'}: ${state.lang === 'tr' ? gate.label_tr : gate.label_en}</div>
     `;
   }
 
@@ -400,7 +538,7 @@
             <input type="range" min="${min}" max="${max}" step="${step}" value="${state.vitals[key]}" data-vital-range="${key}" aria-label="${name} slider">
             <input type="number" min="${min}" max="${max}" step="${step}" value="${state.vitals[key]}" data-vital-num="${key}" aria-label="${name} value">
           </div>
-          <div class="vital-range-hint">NASA Nominal: ${optStr}</div>
+          <div class="vital-range-hint">${state.lang === 'tr' ? 'NASA Normal' : 'NASA Nominal'}: ${optStr}</div>
         </div>
       `;
     }).join('');
@@ -502,7 +640,7 @@
       ${dots}
       <text x="${padX}" y="162" fill="#93a7c7" font-size="10">Sol 1</text>
       <text x="270" y="162" fill="#93a7c7" font-size="10">Sol 7</text>
-      <text x="${W - 35}" y="162" fill="#38bdf8" font-size="10">Now (${current})</text>
+      <text x="${W - 42}" y="162" fill="#38bdf8" font-size="10">${state.lang === 'tr' ? 'Şimdi' : 'Now'} (${current})</text>
     `;
   }
 
@@ -525,8 +663,9 @@
     }).join('');
     els.ceitGuideContainer.innerHTML = `
       <p class="vital-range-hint" style="margin-top:0;">
-        Powered by <b>WerreduR LearningGate</b> (Dr. Zerrin Dagli, Dept. of CEIT — Mersin Univ.): active tier = <b>${state.lang === 'tr' ? gate.label_tr : gate.label_en}</b>
-        (Cognitive Reserve ${Math.round(gate.cognitive_reserve * 100)}% · Mastery ${Math.round(gate.mastery_index * 100)}%).
+        ${state.lang === 'tr'
+          ? `<b>WerreduR LearningGate</b> Altyapısı (Dr. Zerrin Dağlı, CEIT Böl. — Mersin Üniv.): aktif düzey = <b>${gate.label_tr}</b> (Bilişsel Rezerv %${Math.round(gate.cognitive_reserve * 100)} · Hakimiyet %${Math.round(gate.mastery_index * 100)}).`
+          : `Powered by <b>WerreduR LearningGate</b> (Dr. Zerrin Dagli, Dept. of CEIT — Mersin Univ.): active tier = <b>${gate.label_en}</b> (Cognitive Reserve ${Math.round(gate.cognitive_reserve * 100)}% · Mastery ${Math.round(gate.mastery_index * 100)}%).`}
       </p>
       <div class="vitals-grid">${cards}</div>
     `;
@@ -536,18 +675,27 @@
     let xp = state.quizCorrect * 40 + (state.streakDays - 1) * 20;
     QUESTS.forEach((q) => { if (state.completedQuests.has(q.id)) xp += q.xp; });
     const adherence = Math.round((state.completedQuests.size / QUESTS.length) * 100);
-    const rank = xp >= 320 ? 'Deep-Space Homeostasis Commander' : xp >= 200 ? 'Mission Flight Medic Steward' : xp >= 100 ? 'Orbital Wellness Specialist' : 'Crew Readiness Cadet';
+    const isTr = state.lang === 'tr';
+    const rank = xp >= 320
+      ? (isTr ? 'Derin Uzay Homeostaz Komutanı' : 'Deep-Space Homeostasis Commander')
+      : xp >= 200
+        ? (isTr ? 'Görev Sağlık Sorumlusu' : 'Mission Flight Medic Steward')
+        : xp >= 100
+          ? (isTr ? 'Yörünge Sağlık Uzmanı' : 'Orbital Wellness Specialist')
+          : (isTr ? 'Mürettebat Hazırlık Adayı' : 'Crew Readiness Cadet');
     const badges = [];
-    if (state.completedQuests.has('ared_bone')) badges.push('ARED Iron Spine');
-    if (state.completedQuests.has('radiation_sync')) badges.push('ALARA Shield Steward');
-    if (state.completedQuests.has('evening_winddown')) badges.push('Circadian Guardian');
-    if (state.quizCorrect >= 2) badges.push('Crew Bio-Literacy Star');
+    if (state.completedQuests.has('ared_bone')) badges.push(isTr ? 'ARED Demir Omurga' : 'ARED Iron Spine');
+    if (state.completedQuests.has('radiation_sync')) badges.push(isTr ? 'ALARA Kalkan Sorumlusu' : 'ALARA Shield Steward');
+    if (state.completedQuests.has('evening_winddown')) badges.push(isTr ? 'Sirkadiyen Koruyucu' : 'Circadian Guardian');
+    if (state.quizCorrect >= 2) badges.push(isTr ? 'Mürettebat Biyo-Okuryazarlık Yıldızı' : 'Crew Bio-Literacy Star');
     return { xp, adherence, rank, badges };
   }
 
   function renderQuestsAndQuiz(gam) {
     els.gamifyRankPill.textContent = gam.rank;
-    els.gamifyXpSummary.textContent = `${gam.xp} XP · ${state.completedQuests.size}/${QUESTS.length} (${gam.adherence}%) · Streak ${state.streakDays}d`;
+    els.gamifyXpSummary.textContent = state.lang === 'tr'
+      ? `${gam.xp} XP · ${state.completedQuests.size}/${QUESTS.length} (%${gam.adherence}) · Seri ${state.streakDays} gün`
+      : `${gam.xp} XP · ${state.completedQuests.size}/${QUESTS.length} (${gam.adherence}%) · Streak ${state.streakDays}d`;
     els.xpBarFill.style.width = Math.min(100, Math.round((gam.xp / 360) * 100)) + '%';
     els.badgeList.innerHTML = gam.badges.map((b) => `<span class="hazard-tag">${b}</span>`).join('');
 
@@ -580,7 +728,7 @@
     const opts = state.lang === 'tr' ? q.optsTr : q.optsEn;
     els.quizContainer.innerHTML = `
       <div class="panel-header" style="margin-bottom:6px;">
-        <strong>Crew Readiness Micro-Quiz (${(state.quizIndex % QUIZZES.length) + 1}/${QUIZZES.length})</strong>
+        <strong>${state.lang === 'tr' ? 'Mürettebat Hazırlık Mini-Testi' : 'Crew Readiness Micro-Quiz'} (${(state.quizIndex % QUIZZES.length) + 1}/${QUIZZES.length})</strong>
         <button type="button" id="btnNextQuiz">${state.lang === 'tr' ? 'Sonraki Soru' : 'Next'}</button>
       </div>
       <div style="font-size:0.88rem;font-weight:600;">${qText}</div>
@@ -610,15 +758,19 @@
 
   function renderPacketInspector(evalRes) {
     els.packetHexBox.textContent = evalRes.packet_hex.match(/.{1,2}/g).join(' ');
-    els.packetBreakdown.textContent =
-      `Bytes [0]=0xA5 Magic · [1]=Env(${evalRes.environment.id}) · [2..21]=10 Quantized Vitals · [22..23]=CRC-16/CCITT-FALSE · ` +
-      `WERR c=(${evalRes.werr_homeostatic.c_real}, ${evalRes.werr_homeostatic.c_imag}i), Escape=${evalRes.werr_homeostatic.escape_iter}/32, WeightRAM=0 B`;
+    els.packetBreakdown.textContent = state.lang === 'tr'
+      ? `Bayt [0]=0xA5 Sihirli Başlık · [1]=Ortam(${evalRes.environment.id}) · [2..21]=12 Sayısallaştırılmış Gösterge · [22..23]=CRC-16/CCITT-FALSE · ` +
+        `WERR c=(${evalRes.werr_homeostatic.c_real}, ${evalRes.werr_homeostatic.c_imag}i), Kaçış=${evalRes.werr_homeostatic.escape_iter}/32, AğırlıkRAM=0 B`
+      : `Bytes [0]=0xA5 Magic · [1]=Env(${evalRes.environment.id}) · [2..21]=12 Quantized Vitals · [22..23]=CRC-16/CCITT-FALSE · ` +
+        `WERR c=(${evalRes.werr_homeostatic.c_real}, ${evalRes.werr_homeostatic.c_imag}i), Escape=${evalRes.werr_homeostatic.escape_iter}/32, WeightRAM=0 B`;
     if (state.lastSeuResult) {
-      els.seuLogBox.innerHTML = `
-        <strong>${state.lang === 'tr' ? 'SEU Bit-Kayması Enjeksiyon Sonucu' : 'Cosmic-Ray SEU Bit-Flip Simulation Result'}</strong><br>
-        Flipped Bit #${state.lastSeuResult.flipped_bit} (Byte ${state.lastSeuResult.flipped_byte}) → Corrupted Hex: <code>${state.lastSeuResult.corrupted_hex}</code><br>
-        <span style="color:#10b981;font-weight:700;">CRC-16 Integrity Check Rejected Corrupt Packet: ${state.lastSeuResult.seu_detected_by_crc} · Neural Weight RAM Corrupted: 0 Bytes</span>
-      `;
+      els.seuLogBox.innerHTML = state.lang === 'tr'
+        ? `<strong>SEU Bit-Kayması Enjeksiyon Sonucu</strong><br>` +
+          `Ters Çevrilen Bit #${state.lastSeuResult.flipped_bit} (Bayt ${state.lastSeuResult.flipped_byte}) → Bozulan Hex: <code>${state.lastSeuResult.corrupted_hex}</code><br>` +
+          `<span style="color:#10b981;font-weight:700;">CRC-16 Bütünlük Kontrolü Bozuk Paketi Reddetti: ${state.lastSeuResult.seu_detected_by_crc} · Ağ Ağırlık RAM'i Hasarı: 0 Bayt</span>`
+        : `<strong>Cosmic-Ray SEU Bit-Flip Simulation Result</strong><br>` +
+          `Flipped Bit #${state.lastSeuResult.flipped_bit} (Byte ${state.lastSeuResult.flipped_byte}) → Corrupted Hex: <code>${state.lastSeuResult.corrupted_hex}</code><br>` +
+          `<span style="color:#10b981;font-weight:700;">CRC-16 Integrity Check Rejected Corrupt Packet: ${state.lastSeuResult.seu_detected_by_crc} · Neural Weight RAM Corrupted: 0 Bytes</span>`;
     } else {
       els.seuLogBox.textContent = UI_I18N[state.lang].seuDefault;
     }
@@ -630,12 +782,13 @@
     const scale = sw.noaa_s_scale || 'S0 (Quiet)';
     const st = sw.status || 'optimal';
     els.noaaHeaderChip.className = 'pill status-' + st;
-    els.noaaHeaderChip.textContent = `GOES Proton: ${sw.pfu_10mev ?? '--'} pfu · ${scale} · Kp ${sw.kp_index ?? '--'}`;
+    els.noaaHeaderChip.textContent = `${state.lang === 'tr' ? 'GOES Proton' : 'GOES Proton'}: ${sw.pfu_10mev ?? '--'} pfu · ${scale} · Kp ${sw.kp_index ?? '--'}`;
 
-    els.noaaDetailCard.innerHTML = `
-      <strong>${sw.source || 'NOAA SWPC'}</strong> · GOES-${sw.satellite || 18} (${sw.proton_time_tag || ''})<br>
-      &ge;10 MeV Proton Flux: <b>${sw.pfu_10mev} pfu</b> (${scale}) · Planetary Kp: <b>${sw.kp_index}</b> · Estimated LEO Habitat Baseline: <b>${sw.estimated_leo_hab_msv_day} mSv/day</b>
-    `;
+    els.noaaDetailCard.innerHTML = state.lang === 'tr'
+      ? `<strong>${sw.source || 'NOAA SWPC'}</strong> · GOES-${sw.satellite || 18} (${sw.proton_time_tag || ''})<br>` +
+        `&ge;10 MeV Proton Akışı: <b>${sw.pfu_10mev} pfu</b> (${scale}) · Gezegensel Kp: <b>${sw.kp_index}</b> · Tahmini LEO Modül Dozu: <b>${sw.estimated_leo_hab_msv_day} mSv/gün</b>`
+      : `<strong>${sw.source || 'NOAA SWPC'}</strong> · GOES-${sw.satellite || 18} (${sw.proton_time_tag || ''})<br>` +
+        `&ge;10 MeV Proton Flux: <b>${sw.pfu_10mev} pfu</b> (${scale}) · Planetary Kp: <b>${sw.kp_index}</b> · Estimated LEO Habitat Baseline: <b>${sw.estimated_leo_hab_msv_day} mSv/day</b>`;
 
     const studies = state.nasaSnapshot.nasa_osdr_studies || [];
     els.osdrList.innerHTML = studies.map((s) => `
@@ -752,8 +905,10 @@
 
   // Camera Optical rPPG modal handlers
   async function openRppgModal() {
+    const tr = state.lang === 'tr';
     els.rppgModal.classList.add('open');
-    els.rppgReadout.textContent = 'Ready';
+    els.rppgReadout.textContent = tr ? 'Hazır' : 'Ready';
+    els.rppgSub.textContent = UI_I18N[state.lang].rppgReadySub;
     els.btnApplyRppg.disabled = true;
     try {
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -761,7 +916,9 @@
         els.rppgVideo.srcObject = state.rppgStream;
       }
     } catch (_) {
-      els.rppgSub.textContent = 'No physical camera granted; synthetic optical PPG trace mode active.';
+      els.rppgSub.textContent = tr
+        ? 'Fiziksel kamera izni yok; sentetik optik PPG dalga modu etkin.'
+        : 'No physical camera granted; synthetic optical PPG trace mode active.';
     }
   }
 
@@ -775,7 +932,8 @@
   }
 
   async function runRppgScan() {
-    els.rppgReadout.textContent = 'Sampling optical green channel...';
+    const tr = state.lang === 'tr';
+    els.rppgReadout.textContent = tr ? 'Optik yeşil kanal örnekleniyor...' : 'Sampling optical green channel...';
     const canvas = document.createElement('canvas');
     canvas.width = 64; canvas.height = 48;
     const cctx = canvas.getContext('2d');
@@ -802,7 +960,9 @@
     const elapsedMin = 2.4 / 60.0;
     const estHr = Math.max(54, Math.min(128, Math.round(crossings / elapsedMin)));
     state.rppgEstimate = { hr: state.rppgStream ? estHr : 74.0 };
-    els.rppgReadout.textContent = `Estimated Pulse: ${state.rppgEstimate.hr} BPM (${samples.length} optical frames)`;
+    els.rppgReadout.textContent = tr
+      ? `Tahmini Nabız: ${state.rppgEstimate.hr} BPM (${samples.length} optik kare)`
+      : `Estimated Pulse: ${state.rppgEstimate.hr} BPM (${samples.length} optical frames)`;
     els.btnApplyRppg.disabled = false;
   }
 
@@ -817,6 +977,12 @@
     });
     els.langToggle.addEventListener('click', () => {
       state.lang = state.lang === 'en' ? 'tr' : 'en';
+      try {
+        window.localStorage.setItem('astrosoma_lang', state.lang);
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', state.lang);
+        window.history.replaceState({}, '', url.toString());
+      } catch (_) {}
       renderAll();
     });
 
@@ -895,7 +1061,7 @@
           }
           renderAll();
         } catch (err) {
-          alert('Could not parse telemetry file: ' + err.message);
+          alert((state.lang === 'tr' ? 'Telemetri dosyası okunamadı: ' : 'Could not parse telemetry file: ') + err.message);
         }
       };
       reader.readAsText(file);

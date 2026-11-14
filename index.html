@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AstroSoma — Autonomous Astronaut Health Monitoring Console</title>
   <meta name="description" content="Open-source zero-SRAM astronaut health monitoring software for ISS, Orion, Lunar Base, Rover, and Mars missions. Built for NASA Space Apps Challenge 2026.">
+  <meta property="og:title" content="AstroSoma — Autonomous Astronaut Health Monitoring Console">
+  <meta property="og:description" content="Dual-layer NASA-STD-3001 triage, 24-byte 0-SRAM WERR-24 telemetry, CEIT adaptive crew pedagogy, webcam rPPG & live NOAA/NASA feeds.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://astrosoma.space/">
+  <meta property="og:image" content="https://astrosoma.space/assets/astrosoma_mission_patch.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://astrosoma.space/">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="stylesheet" href="/assets/css/styles.css">
@@ -90,7 +97,7 @@
             <!-- Whole-body Immune & Radiation Shield Halo (clickable) -->
             <g class="body-hotspot" data-region="immune_rad" tabindex="0">
               <ellipse cx="130" cy="215" rx="108" ry="198" fill="url(#auraGrad)" stroke="#38bdf8" stroke-dasharray="5 5" stroke-opacity="0.45" class="hotspot-ring"/>
-              <text x="130" y="427" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">IMMUNE &amp; RADIATION SHIELD</text>
+              <text id="svgLblImmune" x="130" y="427" text-anchor="middle" fill="#93c5fd" font-size="9.5" font-weight="600">IMMUNE &amp; RADIATION SHIELD</text>
             </g>
 
             <!-- Stylized Clinical Human Figure Silhouette -->
@@ -101,7 +108,7 @@
             <!-- Region 1: Neuro / Brain -->
             <g class="body-hotspot" data-region="neuro" tabindex="0">
               <circle cx="130" cy="46" r="16" fill="#10b981" fill-opacity="0.32" stroke="#10b981" stroke-width="2" class="hotspot-ring hotspot-core"/>
-              <text x="130" y="49" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">NEURO</text>
+              <text id="svgLblNeuro" x="130" y="49" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">NEURO</text>
             </g>
 
             <!-- Region 2: Ocular / SANS -->
@@ -116,7 +123,7 @@
               <rect x="52" y="110" width="76" height="50" rx="8" fill="transparent"/>
               <path d="M106 112 C98 122 98 152 108 158 L124 156 L124 112 Z M154 112 C162 122 162 152 152 158 L136 156 L136 112 Z"
                     fill="#10b981" fill-opacity="0.28" stroke="#10b981" stroke-width="1.8" class="hotspot-ring hotspot-core"/>
-              <text x="86" y="138" text-anchor="end" fill="#cbd5e1" font-size="9">RESP</text>
+              <text id="svgLblResp" x="86" y="138" text-anchor="end" fill="#cbd5e1" font-size="9">RESP</text>
             </g>
 
             <!-- Region 4: Cardiovascular / Heart -->
@@ -124,13 +131,13 @@
               <rect x="120" y="118" width="98" height="36" rx="10" fill="transparent"/>
               <circle cx="136" cy="136" r="15" fill="#10b981" fill-opacity="0.45" stroke="#10b981" stroke-width="2.2" class="hotspot-ring hotspot-core"/>
               <path d="M126 136 L131 136 L134 128 L138 143 L141 134 L146 136" fill="none" stroke="#fff" stroke-width="1.8"/>
-              <text x="176" y="138" text-anchor="start" fill="#cbd5e1" font-size="9">CARDIO</text>
+              <text id="svgLblCardio" x="176" y="138" text-anchor="start" fill="#cbd5e1" font-size="9">CARDIO</text>
             </g>
 
             <!-- Region 5: Metabolic / Glucose & Abdomen -->
             <g class="body-hotspot" data-region="metab" tabindex="0">
               <ellipse cx="130" cy="186" rx="22" ry="15" fill="#10b981" fill-opacity="0.32" stroke="#10b981" stroke-width="1.8" class="hotspot-ring hotspot-core"/>
-              <text x="130" y="189" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">METAB</text>
+              <text id="svgLblMetab" x="130" y="189" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">METAB</text>
             </g>
 
             <!-- Region 6: Musculoskeletal / Bone & Thermo -->
@@ -138,7 +145,7 @@
               <rect x="98" y="254" width="64" height="94" rx="10" fill="transparent"/>
               <rect x="100" y="255" width="16" height="92" rx="7" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="1.8" class="hotspot-ring hotspot-core"/>
               <rect x="144" y="255" width="16" height="92" rx="7" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="1.8" class="hotspot-ring hotspot-core"/>
-              <text x="130" y="305" text-anchor="middle" fill="#cbd5e1" font-size="8.5" font-weight="700">BONE / °C</text>
+              <text id="svgLblMusculo" x="130" y="305" text-anchor="middle" fill="#cbd5e1" font-size="8.5" font-weight="700">BONE / °C</text>
             </g>
           </svg>
 
@@ -272,11 +279,12 @@
     </section>
 
     <footer class="site-footer">
-      AstroSoma · NASA Space Apps Challenge 2026 ("Create Health Monitoring Software for Astronauts on Space Missions") ·
-      <a href="https://github.com/Lexovian/astrosoma" target="_blank" rel="noopener">Apache-2.0 Open Source</a> ·
-      Core References: <a href="https://github.com/Lexovian/WerrSoma" target="_blank" rel="noopener">Lexovian/WerrSoma</a> &amp;
+      <span id="footerPrefix">AstroSoma · NASA Space Apps Challenge 2026 ("Create Health Monitoring Software for Astronauts on Space Missions")</span> ·
+      <a id="footerSlidesLink" href="/demo/slides_en.html" target="_blank" rel="noopener">7-Slide HTML Deck</a> ·
+      <a id="footerArchLink" href="https://github.com/Lexovian/astrosoma" target="_blank" rel="noopener">Apache-2.0 Open Source</a> ·
+      <span id="footerRefsLbl">Core References</span>: <a href="https://github.com/Lexovian/WerrSoma" target="_blank" rel="noopener">Lexovian/WerrSoma</a> &amp;
       <a href="https://github.com/jesmaat/WerreduR" target="_blank" rel="noopener">jesmaat/WerreduR</a> ·
-      Contact: <a href="mailto:info@astrosoma.space">info@astrosoma.space</a>
+      <span id="footerContactLbl">Contact</span>: <a href="mailto:info@astrosoma.space">info@astrosoma.space</a>
     </footer>
   </div>
 

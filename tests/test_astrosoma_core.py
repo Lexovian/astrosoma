@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from astrosoma.clinical_triage import (  # noqa: E402
     ANATOMY_REGIONS,
     ENVIRONMENTS,
+    INDICATOR_SPECS,
     evaluate_astronaut_state,
 )
 from astrosoma.codec_werr24 import (  # noqa: E402
@@ -173,3 +174,26 @@ def test_python_to_javascript_werr24_bit_exact_parity():
         assert js_res["status"] == py_eval["overall_status"]
         assert js_res["seu_ok"] is True
         assert crc16_ccitt(pack_werr24(py_vitals)[:22]) == unpack_werr24(pack_werr24(py_vitals))["crc_received"]
+
+
+def test_twelve_indicators_and_deliverables_present():
+    assert len(INDICATOR_SPECS) == 12
+    assert len(ANATOMY_REGIONS) == 7
+    assert len(ENVIRONMENTS) == 5
+
+    ev = evaluate_astronaut_state(SCENARIOS["nominal"])
+    assert len(ev["indicators"]) == 12
+
+    required_files = [
+        "index.html",
+        "assets/js/app.js",
+        "assets/js/werr24_core.js",
+        "functions/api/nasa-osdr.js",
+        "docs/AstroSoma_Presentation_EN.pdf",
+        "docs/AstroSoma_Presentation_TR.pdf",
+        "demo/slides_en.html",
+        "demo/slides_tr.html",
+    ]
+    for rel in required_files:
+        p = ROOT / rel
+        assert p.exists() and p.stat().st_size > 0, f"Missing deliverable: {rel}"

@@ -71,6 +71,8 @@ def _slide_css() -> str:
     th, td { border: 1px solid rgba(56, 189, 248, 0.24); padding: 7px 10px; text-align: left; }
     th { background: rgba(56, 189, 248, 0.14); color: #7dd3fc; font-weight: 700; }
     code { font-family: Consolas, monospace; background: rgba(2, 6, 23, 0.75); padding: 2px 6px; border-radius: 5px; color: #7dd3fc; font-size: 13.5px; }
+    a { color: inherit; text-decoration: none; }
+    a.link { color: #7dd3fc; text-decoration: underline; text-underline-offset: 2px; }
     .ftr {
       border-top: 1px solid rgba(56, 189, 248, 0.2);
       padding-top: 8px; margin-top: 12px;
@@ -95,7 +97,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
           <div class="hdr"><span class="eyebrow">NASA Space Apps Challenge 2026 · Universal Event</span><span class="pg">1 / 7</span></div>
           <div class="hero-grid">
             <div>
-              <span class="pill green">CANLI: https://astrosoma.space/</span>
+              <a class="pill green" href="https://astrosoma.space/">CANLI: https://astrosoma.space/</a>
               <span class="pill">0-SRAM Otonom Triyaj</span>
               <span class="pill">CEIT Uyarlanır Mürettebat UX</span>
               <h1>AstroSoma</h1>
@@ -105,15 +107,15 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               <div class="card">
                 <p><b>Takım Lideri:</b> Dağhan Dağlı (<code>@Lexovian</code>) — Yapay Zeka ve Sistem Mimarisi (<i>Lexovian/WerrSoma</i>)</p>
                 <p><b>Eş-Araştırmacı:</b> Dr. Zerrin Dağlı (<code>@jesmaat</code>) — Bilgisayar ve Öğretim Teknolojileri Eğitimi (CEIT) Doktora, Mersin Üniv. (<i>jesmaat/WerreduR</i>)</p>
-                <p style="margin-bottom:0;"><b>Açık Kaynak &amp; İletişim:</b> <code>github.com/Lexovian/astrosoma</code> (Apache-2.0) · <code>info@astrosoma.space</code></p>
+                <p style="margin-bottom:0;"><b>Açık Kaynak &amp; İletişim:</b> <a class="link" href="https://github.com/Lexovian/astrosoma"><code>github.com/Lexovian/astrosoma</code></a> (Apache-2.0) · <a class="link" href="mailto:info@astrosoma.space"><code>info@astrosoma.space</code></a></p>
               </div>
             </div>
             <div class="patch-wrap">
               <img src="{patch_uri}" alt="AstroSoma Mission Patch">
-              <div style="margin-top:10px;font-size:13px;color:#93a7c7;">Mission Patch (SI-GENERATED) · WERR-24 &amp; CEIT</div>
+              <div style="margin-top:10px;font-size:13px;color:#93a7c7;">Görev Arması (SI-GENERATED) · WERR-24 ve CEIT</div>
             </div>
           </div>
-          <div class="ftr"><span>Create Health Monitoring Software for Astronauts on Space Missions</span><span>astrosoma.space</span></div>
+          <div class="ftr"><span>Create Health Monitoring Software for Astronauts on Space Missions</span><a href="https://astrosoma.space/">astrosoma.space</a></div>
         </section>"""
 
         s2 = """
@@ -166,7 +168,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               </ul>
             </div>
           </div>
-          <div class="ftr"><span>Zenodo DOI: 10.5281/zenodo.22996625 (WerrSoma)</span><span>astrosoma.space · 3 / 7</span></div>
+          <div class="ftr"><span><a href="https://doi.org/10.5281/zenodo.22996625">Zenodo DOI: 10.5281/zenodo.22996625</a> (WerrSoma)</span><a href="https://astrosoma.space/">astrosoma.space · 3 / 7</a></div>
         </section>"""
 
         s4 = """
@@ -206,7 +208,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               </ul>
             </div>
           </div>
-          <div class="ftr"><span>Canlı Uygulama: https://astrosoma.space/</span><span>astrosoma.space · 4 / 7</span></div>
+          <div class="ftr"><span>Canlı Uygulama: <a class="link" href="https://astrosoma.space/">https://astrosoma.space/</a></span><a href="https://astrosoma.space/">astrosoma.space · 4 / 7</a></div>
         </section>"""
 
         s5 = """
@@ -233,7 +235,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               </ul>
             </div>
           </div>
-          <div class="ftr"><span>Department of Computer Education &amp; Instructional Technology (CEIT)</span><span>astrosoma.space · 5 / 7</span></div>
+          <div class="ftr"><span>Department of Computer Education &amp; Instructional Technology (CEIT) · <a href="https://doi.org/10.5281/zenodo.23128224">DOI: 10.5281/zenodo.23128224</a></span><a href="https://astrosoma.space/">astrosoma.space · 5 / 7</a></div>
         </section>"""
 
         s6 = f"""
@@ -251,7 +253,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
             </div>
             <div class="card">
               <h3>Ölçülmüş Mühendislik Doğrulaması</h3>
-              <div class="kpi">6 / 6 Pytest Suite BAŞARILI</div>
+              <div class="kpi">7 / 7 Pytest Suite BAŞARILI</div>
               <ul>
                 <li><b>Bit-Düzeyinde Parite:</b> Python (<code>codec_werr24.py</code>) ve JavaScript (<code>werr24_core.js</code>) Node.js çapraz testinde özdeş paket hex ve rezerv skoru verdi.</li>
                 <li><b>192 / 192 SEU Testi:</b> 24 baytlık çerçevedeki tüm 192 bit tek tek ters çevrilerek CRC-16'nın %100 hata yakaladığı ve model ağırlık belleğinin <code>0 Bayt</code> kaldığı doğrulandı.</li>
@@ -259,7 +261,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               </ul>
             </div>
           </div>
-          <div class="ftr"><span>osdr.nasa.gov · services.swpc.noaa.gov</span><span>astrosoma.space · 6 / 7</span></div>
+          <div class="ftr"><span><a href="https://osdr.nasa.gov/">osdr.nasa.gov</a> · <a href="https://services.swpc.noaa.gov/">services.swpc.noaa.gov</a></span><a href="https://astrosoma.space/">astrosoma.space · 6 / 7</a></div>
         </section>"""
 
         s7 = """
@@ -270,10 +272,10 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
             <div class="card">
               <h3>Canlı Ekosistem Bağlantıları</h3>
               <ul>
-                <li><b>Canlı Web Uygulaması:</b> <code>https://astrosoma.space/</code> (Cloudflare Pages, Full Strict SSL, Edge OSDR Proxy)</li>
-                <li><b>Kaynak Kodu (Apache-2.0):</b> <code>https://github.com/Lexovian/astrosoma</code></li>
-                <li><b>Takım Sayfası:</b> <code>spaceappschallenge.org/2026/find-a-team/astrosoma1/</code></li>
-                <li><b>İletişim:</b> <code>info@astrosoma.space</code></li>
+                <li><b>Canlı Web Uygulaması:</b> <a class="link" href="https://astrosoma.space/"><code>https://astrosoma.space/</code></a> (Cloudflare Pages, Full Strict SSL, Edge OSDR Proxy)</li>
+                <li><b>Kaynak Kodu (Apache-2.0):</b> <a class="link" href="https://github.com/Lexovian/astrosoma"><code>https://github.com/Lexovian/astrosoma</code></a></li>
+                <li><b>Takım Sayfası:</b> <a class="link" href="https://www.spaceappschallenge.org/2026/find-a-team/astrosoma1/"><code>spaceappschallenge.org/2026/find-a-team/astrosoma1/</code></a></li>
+                <li><b>İletişim:</b> <a class="link" href="mailto:info@astrosoma.space"><code>info@astrosoma.space</code></a></li>
               </ul>
             </div>
             <div class="card">
@@ -294,7 +296,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
           <div class="hdr"><span class="eyebrow">NASA Space Apps Challenge 2026 · Universal Event</span><span class="pg">1 / 7</span></div>
           <div class="hero-grid">
             <div>
-              <span class="pill green">LIVE: https://astrosoma.space/</span>
+              <a class="pill green" href="https://astrosoma.space/">LIVE: https://astrosoma.space/</a>
               <span class="pill">0-SRAM Autonomous Triage</span>
               <span class="pill">CEIT Adaptive Crew UX</span>
               <h1>AstroSoma</h1>
@@ -304,7 +306,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               <div class="card">
                 <p><b>Team Owner:</b> Dağhan Dağlı (<code>@Lexovian</code>) — AI &amp; Systems Architecture (<i>Lexovian/WerrSoma</i>)</p>
                 <p><b>Co-Investigator:</b> Dr. Zerrin Dağlı (<code>@jesmaat</code>) — Ph.D., Department of Computer Education &amp; Instructional Technology (CEIT), Mersin Univ. (<i>jesmaat/WerreduR</i>)</p>
-                <p style="margin-bottom:0;"><b>Open Source &amp; Contact:</b> <code>github.com/Lexovian/astrosoma</code> (Apache-2.0) · <code>info@astrosoma.space</code></p>
+                <p style="margin-bottom:0;"><b>Open Source &amp; Contact:</b> <a class="link" href="https://github.com/Lexovian/astrosoma"><code>github.com/Lexovian/astrosoma</code></a> (Apache-2.0) · <a class="link" href="mailto:info@astrosoma.space"><code>info@astrosoma.space</code></a></p>
               </div>
             </div>
             <div class="patch-wrap">
@@ -312,7 +314,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               <div style="margin-top:10px;font-size:13px;color:#93a7c7;">Mission Patch (SI-GENERATED) · WERR-24 &amp; CEIT</div>
             </div>
           </div>
-          <div class="ftr"><span>Challenge: Create Health Monitoring Software for Astronauts on Space Missions</span><span>astrosoma.space</span></div>
+          <div class="ftr"><span>Challenge: Create Health Monitoring Software for Astronauts on Space Missions</span><a href="https://astrosoma.space/">astrosoma.space</a></div>
         </section>"""
 
         s2 = """
@@ -365,7 +367,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               </ul>
             </div>
           </div>
-          <div class="ftr"><span>WerrSoma Reference DOI: 10.5281/zenodo.22996625</span><span>astrosoma.space · 3 / 7</span></div>
+          <div class="ftr"><span><a href="https://doi.org/10.5281/zenodo.22996625">WerrSoma Reference DOI: 10.5281/zenodo.22996625</a></span><a href="https://astrosoma.space/">astrosoma.space · 3 / 7</a></div>
         </section>"""
 
         s4 = """
@@ -405,7 +407,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               </ul>
             </div>
           </div>
-          <div class="ftr"><span>Live Web Console: https://astrosoma.space/</span><span>astrosoma.space · 4 / 7</span></div>
+          <div class="ftr"><span>Live Web Console: <a class="link" href="https://astrosoma.space/">https://astrosoma.space/</a></span><a href="https://astrosoma.space/">astrosoma.space · 4 / 7</a></div>
         </section>"""
 
         s5 = """
@@ -432,7 +434,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               </ul>
             </div>
           </div>
-          <div class="ftr"><span>WerreduR Zenodo Archive DOI: 10.5281/zenodo.23128224</span><span>astrosoma.space · 5 / 7</span></div>
+          <div class="ftr"><span><a href="https://doi.org/10.5281/zenodo.23128224">WerreduR Zenodo Archive DOI: 10.5281/zenodo.23128224</a></span><a href="https://astrosoma.space/">astrosoma.space · 5 / 7</a></div>
         </section>"""
 
         s6 = f"""
@@ -450,7 +452,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
             </div>
             <div class="card">
               <h3>Empirical Engineering Checks</h3>
-              <div class="kpi">6 / 6 Automated Tests Passing</div>
+              <div class="kpi">7 / 7 Automated Tests Passing</div>
               <ul>
                 <li><b>Cross-Runtime Bit-Exact Parity:</b> Python (<code>codec_werr24.py</code>) and JS (<code>werr24_core.js</code>) match byte-for-byte via Node.js CI verification.</li>
                 <li><b>Exhaustive 192-Bit SEU Fault Sweep:</b> Every single bit-flip across the 24-byte frame is flagged by <code>CRC-16</code> while neural weight RAM stays at <code>0 Bytes</code>.</li>
@@ -458,7 +460,7 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
               </ul>
             </div>
           </div>
-          <div class="ftr"><span>osdr.nasa.gov · services.swpc.noaa.gov</span><span>astrosoma.space · 6 / 7</span></div>
+          <div class="ftr"><span><a href="https://osdr.nasa.gov/">osdr.nasa.gov</a> · <a href="https://services.swpc.noaa.gov/">services.swpc.noaa.gov</a></span><a href="https://astrosoma.space/">astrosoma.space · 6 / 7</a></div>
         </section>"""
 
         s7 = """
@@ -469,10 +471,10 @@ def _build_slides_html(lang: str, snap: Dict[str, Any]) -> str:
             <div class="card">
               <h3>Verified Project Links</h3>
               <ul>
-                <li><b>Live Console:</b> <code>https://astrosoma.space/</code> (Cloudflare Pages, Full Strict SSL)</li>
-                <li><b>GitHub Repository:</b> <code>https://github.com/Lexovian/astrosoma</code> (Apache-2.0)</li>
-                <li><b>NASA Space Apps Team:</b> <code>spaceappschallenge.org/2026/find-a-team/astrosoma1/</code></li>
-                <li><b>Team Email:</b> <code>info@astrosoma.space</code></li>
+                <li><b>Live Console:</b> <a class="link" href="https://astrosoma.space/"><code>https://astrosoma.space/</code></a> (Cloudflare Pages, Full Strict SSL)</li>
+                <li><b>GitHub Repository:</b> <a class="link" href="https://github.com/Lexovian/astrosoma"><code>https://github.com/Lexovian/astrosoma</code></a> (Apache-2.0)</li>
+                <li><b>NASA Space Apps Team:</b> <a class="link" href="https://www.spaceappschallenge.org/2026/find-a-team/astrosoma1/"><code>spaceappschallenge.org/2026/find-a-team/astrosoma1/</code></a></li>
+                <li><b>Team Email:</b> <a class="link" href="mailto:info@astrosoma.space"><code>info@astrosoma.space</code></a></li>
               </ul>
             </div>
             <div class="card">
