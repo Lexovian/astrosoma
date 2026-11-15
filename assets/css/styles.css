@@ -609,10 +609,11 @@ footer.site-footer {
 
 @media (max-width: 640px) {
   .app-shell { padding: 10px 10px 32px; }
-  button, select, .tab-btn {
+  button, select, .tab-btn, .region-chip {
     min-height: 40px;
     padding: 8px 12px;
   }
+  .region-chip { font-size: 0.78rem; }
   .pill { font-size: 0.76rem; padding: 6px 11px; }
   input[type="range"] { min-height: 36px; }
   .rppg-preview {
