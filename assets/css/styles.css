@@ -606,3 +606,21 @@ footer.site-footer {
   font-size: 0.79rem;
   color: var(--text-muted);
 }
+
+@media (max-width: 640px) {
+  .app-shell { padding: 10px 10px 32px; }
+  button, select, .tab-btn {
+    min-height: 40px;
+    padding: 8px 12px;
+  }
+  .pill { font-size: 0.76rem; padding: 6px 11px; }
+  input[type="range"] { min-height: 36px; }
+  .rppg-preview {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .rppg-preview video {
+    width: 100%;
+    height: 180px;
+  }
+}
